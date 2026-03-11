@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your Deal | Click Click Close</title>
+  <meta name="description" content="Submit your investment deal. Get matched with the best lender in 15 minutes. No credit pull. 35+ states. No income docs.">
+  <meta name="keywords" content="submit investment deal, DSCR loan application, fix and flip loan, bridge loan application, investor loan matching, no credit pull loan">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Submit Your Deal | Click Click Close">
+  <meta property="og:description" content="Submit your deal in under 5 minutes. Get matched with the best investment property lender in 15 minutes. No credit pull. No income docs.">
+  <meta property="og:url" content="https://clickclickclose.click/submit.html">
+  <meta property="og:site_name" content="Click Click Close">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Submit Your Deal | Click Click Close">
+  <meta name="twitter:description" content="Submit your deal in under 5 minutes. Get matched with the best lender in 15 minutes. No credit pull.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://clickclickclose.click/submit.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Submit Your Deal — Click Click Close",
+    "description": "Submit your investment property deal and get matched with the best lender in 15 minutes. No credit pull, no income docs required.",
+    "url": "https://clickclickclose.click/submit.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Click Click Close",
+      "url": "https://clickclickclose.click"
+    },
+    "mainEntity": {
+      "@type": "Service",
+      "name": "Investment Property Loan Matching",
+      "description": "AI-powered loan matching for real estate investors. Submit your deal scenario and get matched with the best lender from our network of 50+ lending partners.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Click Click Close",
+        "url": "https://clickclickclose.click"
+      },
+      "areaServed": "US",
+      "serviceType": "Mortgage Broker",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free scenario inquiry — no credit pull, no commitment"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    /* ===== Submit Page Specific Styles ===== */
+    .submit-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      padding: 7rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .submit-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 80%; height: 200%;
+      background: radial-gradient(ellipse, rgba(212,168,67,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .submit-hero .container { position: relative; z-index: 2; text-align: center; }
+    .submit-hero h1 { color: var(--white); margin-bottom: 0.75rem; font-weight: 800; }
+    .submit-hero h1 .highlight { color: var(--gold); }
+    .submit-hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    /* Trust bar */
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .trust-item .trust-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(212,168,67,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* Form page layout */
+    .form-page-wrapper {
+      background: var(--off-white);
+      padding: 3rem 0 5rem;
+    }
+
+    /* Checkbox consent styling */
+    .consent-group {
+      margin-bottom: 1.25rem;
+    }
+    .consent-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    .consent-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .consent-label a {
+      color: var(--gold-dark);
+      text-decoration: underline;
+    }
+    .consent-label a:hover { color: var(--gold); }
+    .consent-error {
+      color: var(--error);
+      font-size: 0.78rem;
+      margin-top: 0.35rem;
+      margin-left: 2rem;
+      display: none;
+    }
+
+    /* DSCR calc inline in form */
+    .dscr-inline-calc {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      display: none;
+    }
+    .dscr-inline-calc h4 {
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dscr-inline-result {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .dscr-inline-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.3);
+      line-height: 1;
+    }
+    .dscr-inline-value.good { color: var(--success); }
+    .dscr-inline-value.ok { color: var(--warning); }
+    .dscr-inline-value.low { color: var(--error); }
+    .dscr-inline-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Auto-save indicator */
+    .autosave-indicator {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.625rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 100;
+      pointer-events: none;
+      box-shadow: var(--shadow-lg);
+    }
+    .autosave-indicator.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Form bottom disclaimer */
+    .form-bottom-disclaimer {
+      max-width: 860px;
+      margin: 2rem auto 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      text-align: center;
+    }
+    .form-bottom-disclaimer strong { color: var(--text-primary); }
+
+    /* Success checkmark animation */
+    @keyframes checkPop {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .success-check {
+      width: 80px;
+      height: 80px;
+      background: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--white);
+      margin: 0 auto 1.5rem;
+      animation: checkPop 0.5s ease forwards;
+    }
+
+    /* Conditional section transition */
+    .conditional-section {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .conditional-section.visible {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .submit-hero { padding: 6rem 0 2rem; }
+      .trust-bar { gap: 1rem; }
+      .trust-item { font-size: 0.8rem; }
+      .trust-item .trust-icon { width: 28px; height: 28px; font-size: 0.8rem; }
+    }
+    @media (max-width: 480px) {
+      .trust-bar { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">CCC</div>
+          Click Click <span>Close</span>
+        </a>
+
+        <div class="nav-links">
+          <div class="dropdown">
+            <a class="dropdown-toggle">Loan Types</a>
+            <div class="dropdown-menu">
+              <a href="dscr.html">DSCR / Rental Loans</a>
+              <a href="fix-and-flip.html">Fix &amp; Flip</a>
+              <a href="bridge.html">Bridge Loans</a>
+              <a href="construction.html">Construction</a>
+              <a href="str.html">Short-Term Rental</a>
+              <a href="portfolio.html">Portfolio / Blanket</a>
+            </div>
+          </div>
+          <a href="about.html">About</a>
+          <a href="calculator.html">Deal Analyzer</a>
+          <a href="submit.html" class="active">Submit a Deal</a>
+        </div>
+
+        <div class="nav-cta">
+          <a href="submit.html" class="btn btn-primary btn-sm">Submit Your Deal</a>
+        </div>
+
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="submit.html">Submit a Deal</a>
+    <div class="mobile-submenu">
+      <a href="dscr.html">DSCR / Rental Loans</a>
+      <a href="fix-and-flip.html">Fix &amp; Flip</a>
+      <a href="bridge.html">Bridge Loans</a>
+      <a href="construction.html">Construction</a>
+      <a href="str.html">Short-Term Rental</a>
+      <a href="portfolio.html">Portfolio / Blanket</a>
+    </div>
+    <a href="about.html">About</a>
+    <a href="calculator.html">Deal Analyzer</a>
+    <a href="submit.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Submit Your Deal</a>
+  </div>
+
+  <!-- ===== SUBMIT HERO ===== -->
+  <section class="submit-hero">
+    <div class="container">
+      <h1>Submit Your Deal, Get <span class="highlight">Matched in 15 Minutes</span></h1>
+      <p>Tell us about your investment property scenario. No credit pull. No commitment. Just fast answers from real lending experts.</p>
+      <div class="trust-bar">
+        <div class="trust-item">
+          <span class="trust-icon">&#128274;</span>
+          No Credit Pull
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#9889;</span>
+          15-Minute Response
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#127463;&#127480;</span>
+          35+ States
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#128196;</span>
+          No Income Docs Required
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <section class="form-page-wrapper">
+    <div class="container">
+      <form id="deal-form" class="form-wrapper" novalidate>
+
+        <!-- Progress Bar -->
+        <div class="form-progress">
+          <div class="form-progress-step active" data-step="0">
+            <span class="step-num">1</span>
+            <span class="step-label">Loan Type</span>
+          </div>
+          <div class="form-progress-step" data-step="1">
+            <span class="step-num">2</span>
+            <span class="step-label">Deal Details</span>
+          </div>
+          <div class="form-progress-step" data-step="2">
+            <span class="step-num">3</span>
+            <span class="step-label">Borrower Profile</span>
+          </div>
+          <div class="form-progress-step" data-step="3">
+            <span class="step-num">4</span>
+            <span class="step-label">Contact &amp; Submit</span>
+          </div>
+        </div>
+
+        <div class="form-body">
+
+          <!-- ======================== -->
+          <!-- STEP 1: LOAN TYPE       -->
+          <!-- ======================== -->
+          <div class="form-step active" data-step="0">
+            <h2>What type of loan are you looking for?</h2>
+            <p class="step-desc">Select the financing program that best matches your investment strategy.</p>
+
+            <div class="loan-type-grid">
+
+              <label class="loan-type-option" data-value="dscr">
+                <input type="radio" name="loanType" value="dscr">
+                <div class="icon">&#127968;</div>
+                <div class="label">DSCR / Rental Property</div>
+                <div class="sub">Buy &amp; hold, qualify on rent</div>
+              </label>
+
+              <label class="loan-type-option" data-value="fix-flip">
+                <input type="radio" name="loanType" value="fix-flip">
+                <div class="icon">&#128296;</div>
+                <div class="label">Fix &amp; Flip / Rehab</div>
+                <div class="sub">Purchase + renovate + sell</div>
+              </label>
+
+              <label class="loan-type-option" data-value="bridge">
+                <input type="radio" name="loanType" value="bridge">
+                <div class="icon">&#127747;</div>
+                <div class="label">Bridge Loan</div>
+                <div class="sub">Short-term gap financing</div>
+              </label>
+
+              <label class="loan-type-option" data-value="construction">
+                <input type="radio" name="loanType" value="construction">
+                <div class="icon">&#127959;</div>
+                <div class="label">Ground-Up Construction</div>
+                <div class="sub">Build from the ground up</div>
+              </label>
+
+              <label class="loan-type-option" data-value="str">
+                <input type="radio" name="loanType" value="str">
+                <div class="icon">&#9992;&#65039;</div>
+                <div class="label">Short-Term Rental</div>
+                <div class="sub">Airbnb / VRBO properties</div>
+              </label>
+
+              <label class="loan-type-option" data-value="portfolio">
+                <input type="radio" name="loanType" value="portfolio">
+                <div class="icon">&#128202;</div>
+                <div class="label">Portfolio / Blanket</div>
+                <div class="sub">Multiple properties, one loan</div>
+              </label>
+
+              <label class="loan-type-option" data-value="refi">
+                <input type="radio" name="loanType" value="refi">
+                <div class="icon">&#128176;</div>
+                <div class="label">Hard Money Refi to Permanent</div>
+                <div class="sub">Refinance into long-term</div>
+              </label>
+
+            </div>
+
+            <div class="form-nav">
+              <div></div>
+              <button type="button" class="btn btn-primary" data-action="next">Next: Deal Details &#8594;</button>
+            </div>
+          </div>
+
+          <!-- ======================== -->
+          <!-- STEP 2: DEAL DETAILS    -->
+          <!-- ======================== -->
+          <div class="form-step" data-step="1">
+            <h2>Property &amp; Deal Details</h2>
+            <p class="step-desc">Tell us about the property and the numbers behind the deal.</p>
+
+            <!-- === FIELDS FOR ALL LOAN TYPES === -->
+            <div data-loan-type="all">
+              <div class="form-group">
+                <label for="property-type">Property Type <span class="required">*</span></label>
+                <select id="property-type" name="propertyType" class="form-control" required>
+                  <option value="">Select property type</option>
+                  <option value="sfr">Single Family Residence (SFR)</option>
+                  <option value="2-4unit">2-4 Unit Multifamily</option>
+                  <option value="condo">Condo</option>
+                  <option value="townhome">Townhome</option>
+                  <option value="5-8unit">5-8 Unit Multifamily</option>
+                </select>
+                <div class="form-error">Please select a property type.</div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="property-state">Property State <span class="required">*</span></label>
+                  <select id="property-state" name="propertyState" class="form-control" required>
+                    <option value="">Select state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="DC">District of Columbia</option>
+                  </select>
+                  <div class="form-error">Please select a state.</div>
+                </div>
+                <div class="form-group">
+                  <label for="property-zip">City / ZIP Code <span class="required">*</span></label>
+                  <input type="text" id="property-zip" name="propertyZip" class="form-control" placeholder="e.g., Dallas, TX 75201" required>
+                  <div class="form-error">Please enter the city or ZIP code.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === DSCR / RENTAL FIELDS === -->
+            <div class="conditional-section" data-loan-type="dscr">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="dscr-purchase-price">Purchase Price or Current Value <span class="required">*</span></label>
+                  <input type="text" id="dscr-purchase-price" name="purchasePrice" class="form-control currency-input" placeholder="$350,000" required>
+                  <div class="form-error">Please enter the purchase price or value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="dscr-rental-income">Monthly Rental Income <span class="required">*</span></label>
+                  <input type="text" id="dscr-rental-income" name="rentalIncome" class="form-control currency-input" placeholder="$2,500" required>
+                  <div class="form-error">Please enter the monthly rental income.</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="dscr-down-payment">Down Payment / Equity Percentage <span class="required">*</span></label>
+                <select id="dscr-down-payment" name="downPayment" class="form-control" required>
+                  <option value="">Select percentage</option>
+                  <option value="15">15%</option>
+                  <option value="20">20%</option>
+                  <option value="25">25%</option>
+                  <option value="30">30%</option>
+                  <option value="35">35%</option>
+                  <option value="40">40% or more</option>
+                </select>
+                <div class="form-error">Please select a down payment percentage.</div>
+              </div>
+
+              <!-- DSCR Calculator -->
+              <div class="dscr-inline-calc" id="dscr-calc-dscr">
+                <h4>&#128200; Estimated DSCR Ratio</h4>
+                <div class="dscr-inline-result">
+                  <div class="dscr-inline-value" id="dscr-value-display">--</div>
+                  <div class="dscr-inline-label" id="dscr-label-display">Enter property value and rental income to calculate</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === FIX & FLIP FIELDS === -->
+            <div class="conditional-section" data-loan-type="fix-flip">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="flip-purchase-price">Purchase Price <span class="required">*</span></label>
+                  <input type="text" id="flip-purchase-price" name="flipPurchasePrice" class="form-control currency-input" placeholder="$200,000" required>
+                  <div class="form-error">Please enter the purchase price.</div>
+                </div>
+                <div class="form-group">
+                  <label for="flip-rehab-budget">Estimated Rehab Budget <span class="required">*</span></label>
+                  <input type="text" id="flip-rehab-budget" name="rehabBudget" class="form-control currency-input" placeholder="$75,000" required>
+                  <div class="form-error">Please enter the rehab budget.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="flip-arv">After Repair Value (ARV) <span class="required">*</span></label>
+                  <input type="text" id="flip-arv" name="arv" class="form-control currency-input" placeholder="$350,000" required>
+                  <div class="form-error">Please enter the ARV.</div>
+                </div>
+                <div class="form-group">
+                  <label for="flip-timeline">Rehab Timeline <span class="required">*</span></label>
+                  <select id="flip-timeline" name="rehabTimeline" class="form-control" required>
+                    <option value="">Select timeline</option>
+                    <option value="3">3 months</option>
+                    <option value="6">6 months</option>
+                    <option value="9">9 months</option>
+                    <option value="12">12 months</option>
+                    <option value="18">18 months</option>
+                  </select>
+                  <div class="form-error">Please select a timeline.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === BRIDGE LOAN FIELDS === -->
+            <div class="conditional-section" data-loan-type="bridge">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bridge-value">Current Property Value <span class="required">*</span></label>
+                  <input type="text" id="bridge-value" name="bridgePropertyValue" class="form-control currency-input" placeholder="$500,000" required>
+                  <div class="form-error">Please enter the current property value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="bridge-amount">Loan Amount Needed <span class="required">*</span></label>
+                  <input type="text" id="bridge-amount" name="bridgeLoanAmount" class="form-control currency-input" placeholder="$350,000" required>
+                  <div class="form-error">Please enter the loan amount needed.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bridge-exit">Exit Strategy <span class="required">*</span></label>
+                  <select id="bridge-exit" name="bridgeExitStrategy" class="form-control" required>
+                    <option value="">Select exit strategy</option>
+                    <option value="sale">Sale</option>
+                    <option value="refinance">Refinance</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="form-error">Please select an exit strategy.</div>
+                </div>
+                <div class="form-group">
+                  <label for="bridge-timeline">Timeline Needed <span class="required">*</span></label>
+                  <select id="bridge-timeline" name="bridgeTimeline" class="form-control" required>
+                    <option value="">Select timeline</option>
+                    <option value="6">6 months</option>
+                    <option value="9">9 months</option>
+                    <option value="12">12 months</option>
+                    <option value="18">18 months</option>
+                    <option value="24">24 months</option>
+                  </select>
+                  <div class="form-error">Please select a timeline.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === CONSTRUCTION FIELDS === -->
+            <div class="conditional-section" data-loan-type="construction">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="const-lot-value">Lot Value / Acquisition Cost <span class="required">*</span></label>
+                  <input type="text" id="const-lot-value" name="lotValue" class="form-control currency-input" placeholder="$100,000" required>
+                  <div class="form-error">Please enter the lot value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="const-budget">Construction Budget <span class="required">*</span></label>
+                  <input type="text" id="const-budget" name="constructionBudget" class="form-control currency-input" placeholder="$350,000" required>
+                  <div class="form-error">Please enter the construction budget.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="const-completed-value">Projected Completed Value <span class="required">*</span></label>
+                  <input type="text" id="const-completed-value" name="completedValue" class="form-control currency-input" placeholder="$600,000" required>
+                  <div class="form-error">Please enter the projected completed value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="const-strategy">Build Strategy <span class="required">*</span></label>
+                  <select id="const-strategy" name="buildStrategy" class="form-control" required>
+                    <option value="">Select strategy</option>
+                    <option value="build-to-rent">Build to Rent</option>
+                    <option value="build-to-sell">Build to Sell</option>
+                    <option value="owner-build">Owner Build</option>
+                  </select>
+                  <div class="form-error">Please select a build strategy.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === SHORT-TERM RENTAL FIELDS === -->
+            <div class="conditional-section" data-loan-type="str">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="str-purchase-price">Purchase Price or Current Value <span class="required">*</span></label>
+                  <input type="text" id="str-purchase-price" name="strPurchasePrice" class="form-control currency-input" placeholder="$400,000" required>
+                  <div class="form-error">Please enter the purchase price or value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="str-nightly-rate">Projected Average Nightly Rate <span class="required">*</span></label>
+                  <input type="text" id="str-nightly-rate" name="nightlyRate" class="form-control currency-input" placeholder="$250" required>
+                  <div class="form-error">Please enter the projected nightly rate.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="str-occupancy">Projected Occupancy % <span class="required">*</span></label>
+                  <select id="str-occupancy" name="occupancyRate" class="form-control" required>
+                    <option value="">Select occupancy rate</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
+                    <option value="80">80%</option>
+                    <option value="90">90%</option>
+                  </select>
+                  <div class="form-error">Please select a projected occupancy rate.</div>
+                </div>
+                <div class="form-group">
+                  <label for="str-down-payment">Down Payment / Equity Percentage <span class="required">*</span></label>
+                  <select id="str-down-payment" name="strDownPayment" class="form-control" required>
+                    <option value="">Select percentage</option>
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                    <option value="30">30%</option>
+                    <option value="35">35%</option>
+                    <option value="40">40% or more</option>
+                  </select>
+                  <div class="form-error">Please select a down payment percentage.</div>
+                </div>
+              </div>
+
+              <!-- DSCR Calculator for STR -->
+              <div class="dscr-inline-calc" id="dscr-calc-str">
+                <h4>&#128200; Estimated DSCR Ratio (STR Income)</h4>
+                <div class="dscr-inline-result">
+                  <div class="dscr-inline-value" id="dscr-value-str">--</div>
+                  <div class="dscr-inline-label" id="dscr-label-str">Enter property value and STR income projections to calculate</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === PORTFOLIO FIELDS === -->
+            <div class="conditional-section" data-loan-type="portfolio">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="port-count">Number of Properties <span class="required">*</span></label>
+                  <input type="number" id="port-count" name="propertyCount" class="form-control" placeholder="e.g., 8" min="2" required>
+                  <div class="form-error">Please enter the number of properties.</div>
+                </div>
+                <div class="form-group">
+                  <label for="port-total-value">Total Portfolio Value <span class="required">*</span></label>
+                  <input type="text" id="port-total-value" name="portfolioValue" class="form-control currency-input" placeholder="$1,500,000" required>
+                  <div class="form-error">Please enter the total portfolio value.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="port-rental-income">Total Monthly Rental Income <span class="required">*</span></label>
+                  <input type="text" id="port-rental-income" name="portfolioRentalIncome" class="form-control currency-input" placeholder="$12,000" required>
+                  <div class="form-error">Please enter total monthly rental income.</div>
+                </div>
+                <div class="form-group">
+                  <label for="port-avg-value">Average Property Value <span class="required">*</span></label>
+                  <input type="text" id="port-avg-value" name="avgPropertyValue" class="form-control currency-input" placeholder="$187,500" required>
+                  <div class="form-error">Please enter average property value.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- === HARD MONEY REFI FIELDS === -->
+            <div class="conditional-section" data-loan-type="refi">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="refi-balance">Current Loan Balance <span class="required">*</span></label>
+                  <input type="text" id="refi-balance" name="currentLoanBalance" class="form-control currency-input" placeholder="$280,000" required>
+                  <div class="form-error">Please enter the current loan balance.</div>
+                </div>
+                <div class="form-group">
+                  <label for="refi-rate">Current Interest Rate <span class="required">*</span></label>
+                  <input type="text" id="refi-rate" name="currentRate" class="form-control" placeholder="e.g., 12.5%" required>
+                  <div class="form-error">Please enter the current interest rate.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="refi-value">Current Property Value <span class="required">*</span></label>
+                  <input type="text" id="refi-value" name="refiPropertyValue" class="form-control currency-input" placeholder="$400,000" required>
+                  <div class="form-error">Please enter the current property value.</div>
+                </div>
+                <div class="form-group">
+                  <label for="refi-rental-income">Monthly Rental Income <span class="required">*</span></label>
+                  <input type="text" id="refi-rental-income" name="refiRentalIncome" class="form-control currency-input" placeholder="$2,800" required>
+                  <div class="form-error">Please enter the monthly rental income.</div>
+                </div>
+              </div>
+
+              <!-- DSCR Calculator for Refi -->
+              <div class="dscr-inline-calc" id="dscr-calc-refi">
+                <h4>&#128200; Estimated DSCR Ratio (Refi)</h4>
+                <div class="dscr-inline-result">
+                  <div class="dscr-inline-value" id="dscr-value-refi">--</div>
+                  <div class="dscr-inline-label" id="dscr-label-refi">Enter property value and rental income to calculate</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-nav" data-loan-type="all">
+              <button type="button" class="btn-back" data-action="back">&#8592; Back</button>
+              <button type="button" class="btn btn-primary" data-action="next">Next: Borrower Profile &#8594;</button>
+            </div>
+          </div>
+
+          <!-- ======================== -->
+          <!-- STEP 3: BORROWER PROFILE -->
+          <!-- ======================== -->
+          <div class="form-step" data-step="2">
+            <h2>Borrower Profile</h2>
+            <p class="step-desc">Help us understand your experience and timeline so we can find the best match.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="credit-score">Credit Score Range <span class="required">*</span></label>
+                <select id="credit-score" name="creditScore" class="form-control" required>
+                  <option value="">Select range</option>
+                  <option value="780+">780+</option>
+                  <option value="740-779">740 - 779</option>
+                  <option value="700-739">700 - 739</option>
+                  <option value="680-699">680 - 699</option>
+                  <option value="660-679">660 - 679</option>
+                  <option value="640-659">640 - 659</option>
+                  <option value="620-639">620 - 639</option>
+                  <option value="below-620">Below 620</option>
+                </select>
+                <div class="form-error">Please select a credit score range.</div>
+              </div>
+              <div class="form-group">
+                <label for="experience">Investment Experience <span class="required">*</span></label>
+                <select id="experience" name="experience" class="form-control" required>
+                  <option value="">Select experience</option>
+                  <option value="first">First investment property</option>
+                  <option value="2-4">2 - 4 properties</option>
+                  <option value="5-10">5 - 10 properties</option>
+                  <option value="10-25">10 - 25 properties</option>
+                  <option value="25+">25+ properties</option>
+                </select>
+                <div class="form-error">Please select your experience level.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="entity-type">Entity Type <span class="required">*</span></label>
+                <select id="entity-type" name="entityType" class="form-control" required>
+                  <option value="">Select entity type</option>
+                  <option value="llc">LLC</option>
+                  <option value="corporation">Corporation</option>
+                  <option value="trust">Trust</option>
+                  <option value="personal">Personal Name</option>
+                </select>
+                <div class="form-error">Please select an entity type.</div>
+              </div>
+              <div class="form-group">
+                <label for="close-timeline">Preferred Close Timeline <span class="required">*</span></label>
+                <select id="close-timeline" name="closeTimeline" class="form-control" required>
+                  <option value="">Select timeline</option>
+                  <option value="asap">ASAP (7 days)</option>
+                  <option value="14">14 days</option>
+                  <option value="21">21 days</option>
+                  <option value="30">30 days</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+                <div class="form-error">Please select a close timeline.</div>
+              </div>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn-back" data-action="back">&#8592; Back</button>
+              <button type="button" class="btn btn-primary" data-action="next">Next: Contact Info &#8594;</button>
+            </div>
+          </div>
+
+          <!-- ======================== -->
+          <!-- STEP 4: CONTACT & SUBMIT -->
+          <!-- ======================== -->
+          <div class="form-step" data-step="3">
+            <h2>Contact Information</h2>
+            <p class="step-desc">Almost done. Tell us how to reach you and we will have a lender match within 15 minutes.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full-name" name="fullName" class="form-control" placeholder="John Smith" required autocomplete="name">
+                <div class="form-error">Please enter your full name.</div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required autocomplete="email">
+                <div class="form-error">Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(555) 123-4567" required autocomplete="tel">
+                <div class="form-error">Please enter a valid 10-digit phone number.</div>
+              </div>
+              <div class="form-group">
+                <label for="best-time">Best Time to Call <span class="optional">(optional)</span></label>
+                <select id="best-time" name="bestTimeToCall" class="form-control">
+                  <option value="">Select preferred time</option>
+                  <option value="morning">Morning (8am - 12pm)</option>
+                  <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                  <option value="evening">Evening (5pm - 8pm)</option>
+                  <option value="anytime">Anytime</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="referral-source">How did you hear about us? <span class="optional">(optional)</span></label>
+              <select id="referral-source" name="referralSource" class="form-control">
+                <option value="">Select one</option>
+                <option value="google">Google</option>
+                <option value="biggerpockets">BiggerPockets</option>
+                <option value="facebook">Facebook</option>
+                <option value="reia">REIA Meeting</option>
+                <option value="referral">Referral</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Business Purpose Attestation -->
+            <div class="consent-group">
+              <label class="consent-label">
+                <input type="checkbox" id="business-purpose" name="businessPurpose" required>
+                <span>I confirm this loan is for business/investment purposes, not for a primary residence or personal use.</span>
+              </label>
+              <div class="consent-error" id="business-purpose-error">You must confirm this loan is for business/investment purposes to continue.</div>
+            </div>
+
+            <!-- TCPA Consent -->
+            <div class="consent-group">
+              <label class="consent-label">
+                <input type="checkbox" id="tcpa-consent" name="tcpaConsent" required>
+                <span>I consent to being contacted by Click Click Close via phone, email, or text regarding my loan inquiry. I understand I can opt out at any time.</span>
+              </label>
+              <div class="consent-error" id="tcpa-consent-error">You must provide consent to be contacted to submit your inquiry.</div>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn-back" data-action="back">&#8592; Back</button>
+              <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">Match Me With a Lender &#8594;</button>
+            </div>
+          </div>
+
+        </div><!-- /.form-body -->
+      </form>
+
+      <!-- Bottom Disclaimer -->
+      <div class="form-bottom-disclaimer">
+        <strong>Scenario Inquiry Only.</strong> This is a scenario inquiry, not a loan application. No credit pull will be performed. All loans are business purpose only &mdash; not for personal, family, or household use. Click Click Close is a loan matching platform that connects real estate investors with qualified lending partners. Rates, terms, and eligibility are determined by individual lenders.
+      </div>
+    </div>
+  </section>
+
+  <!-- Auto-save indicator -->
+  <div class="autosave-indicator" id="autosave-indicator">&#10003; Progress saved</div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;">
+            <div class="logo-icon">CCC</div>
+            Click Click <span>Close</span>
+          </a>
+          <p>AI-powered investment property loan matching. Upload your deal, get matched with the best lender in 15 minutes. Serving real estate investors across 35+ states.</p>
+          <div class="nmls-badge">NMLS #000000 (Placeholder)</div>
+        </div>
+        <div>
+          <h4>Loan Types</h4>
+          <ul>
+            <li><a href="dscr.html">DSCR Loans</a></li>
+            <li><a href="fix-and-flip.html">Fix &amp; Flip</a></li>
+            <li><a href="bridge.html">Bridge Loans</a></li>
+            <li><a href="construction.html">Construction</a></li>
+            <li><a href="str.html">Short-Term Rental</a></li>
+            <li><a href="portfolio.html">Portfolio Loans</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="submit.html">Submit a Deal</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Phone: (888) 555-0199</li>
+            <li>Email: deals@clickclickclose.click</li>
+            <li>Hours: M-F 8am-6pm ET</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Click Click Close. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Equal Housing Lender</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+  /* ============================================
+     SUBMIT PAGE — Enhanced Form Logic
+     Extends app.js with page-specific behavior:
+     - Conditional field display
+     - DSCR auto-calculation
+     - localStorage auto-save/restore
+     - Consent checkbox validation
+     ============================================ */
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const form = document.getElementById('deal-form');
+    if (!form) return;
+
+    const steps = form.querySelectorAll('.form-step');
+    const progressSteps = document.querySelectorAll('.form-progress-step');
+    const autosaveIndicator = document.getElementById('autosave-indicator');
+    let currentStep = 0;
+    let selectedLoanType = '';
+
+    // ---- Step Navigation ----
+    function showStep(index) {
+      if (index < 0 || index >= steps.length) return;
+      steps.forEach((s, i) => s.classList.toggle('active', i === index));
+      progressSteps.forEach((ps, i) => {
+        ps.classList.remove('active', 'completed');
+        if (i < index) ps.classList.add('completed');
+        if (i === index) ps.classList.add('active');
+      });
+      currentStep = index;
+      window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+      saveToLocalStorage();
+    }
+
+    // Wire up next/back buttons
+    form.querySelectorAll('[data-action="next"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (validateStep(currentStep)) {
+          showStep(currentStep + 1);
+        }
+      });
+    });
+    form.querySelectorAll('[data-action="back"]').forEach(btn => {
+      btn.addEventListener('click', () => showStep(currentStep - 1));
+    });
+
+    // ---- Loan Type Selection ----
+    const loanTypeOptions = form.querySelectorAll('.loan-type-option');
+    loanTypeOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        loanTypeOptions.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const radio = opt.querySelector('input[type="radio"]');
+        if (radio) {
+          radio.checked = true;
+          selectedLoanType = radio.value;
+          showConditionalFields(selectedLoanType);
+          saveToLocalStorage();
+        }
+      });
+    });
+
+    // ---- Conditional Field Display ----
+    function showConditionalFields(loanType) {
+      // Hide all conditional sections
+      form.querySelectorAll('.conditional-section').forEach(el => {
+        el.classList.remove('visible');
+        // Clear required from hidden fields so validation skips them
+        el.querySelectorAll('[required]').forEach(f => f.removeAttribute('data-active-required'));
+      });
+
+      // Show matching section
+      const target = form.querySelector(`.conditional-section[data-loan-type="${loanType}"]`);
+      if (target) {
+        target.classList.add('visible');
+        target.querySelectorAll('[required]').forEach(f => f.setAttribute('data-active-required', 'true'));
+      }
+
+      // Show/hide DSCR calculators
+      document.querySelectorAll('.dscr-inline-calc').forEach(c => c.style.display = 'none');
+      if (loanType === 'dscr') {
+        const calc = document.getElementById('dscr-calc-dscr');
+        if (calc) calc.style.display = 'block';
+      } else if (loanType === 'str') {
+        const calc = document.getElementById('dscr-calc-str');
+        if (calc) calc.style.display = 'block';
+      } else if (loanType === 'refi') {
+        const calc = document.getElementById('dscr-calc-refi');
+        if (calc) calc.style.display = 'block';
+      }
+    }
+
+    // ---- DSCR Auto-Calculation ----
+    function parseCurrency(val) {
+      if (!val) return 0;
+      return parseFloat(val.toString().replace(/[^0-9.]/g, '')) || 0;
+    }
+
+    function calculateAndDisplayDSCR(rent, propertyValue, downPct, valueEl, labelEl) {
+      if (rent <= 0 || propertyValue <= 0) {
+        valueEl.textContent = '--';
+        valueEl.className = 'dscr-inline-value';
+        labelEl.textContent = 'Enter property value and rental income to calculate';
+        return;
+      }
+
+      const dp = downPct || 20;
+      const loanAmount = propertyValue * (1 - dp / 100);
+      const monthlyRate = 0.075 / 12; // Assume 7.5% rate
+      const n = 360; // 30-year
+      const monthlyPI = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+      const monthlyTaxIns = propertyValue * 0.015 / 12; // ~1.5% annually
+      const totalPITIA = monthlyPI + monthlyTaxIns;
+      const dscr = rent / totalPITIA;
+
+      valueEl.textContent = dscr.toFixed(2);
+      valueEl.className = 'dscr-inline-value';
+
+      if (dscr >= 1.25) {
+        valueEl.classList.add('good');
+        labelEl.textContent = 'Strong ratio — qualifies with most lenders';
+      } else if (dscr >= 1.0) {
+        valueEl.classList.add('ok');
+        labelEl.textContent = 'Acceptable — options available, may have rate premium';
+      } else if (dscr >= 0.75) {
+        valueEl.classList.add('low');
+        labelEl.textContent = 'Below 1.0 — limited lender options, higher rates likely';
+      } else {
+        valueEl.classList.add('low');
+        labelEl.textContent = 'Low DSCR — may need more equity or higher rent';
+      }
+    }
+
+    // DSCR calc for DSCR/Rental
+    function recalcDSCR() {
+      const price = parseCurrency(document.getElementById('dscr-purchase-price')?.value);
+      const rent = parseCurrency(document.getElementById('dscr-rental-income')?.value);
+      const dp = parseFloat(document.getElementById('dscr-down-payment')?.value) || 20;
+      const valueEl = document.getElementById('dscr-value-display');
+      const labelEl = document.getElementById('dscr-label-display');
+      if (valueEl && labelEl) calculateAndDisplayDSCR(rent, price, dp, valueEl, labelEl);
+    }
+
+    // DSCR calc for STR
+    function recalcSTR_DSCR() {
+      const price = parseCurrency(document.getElementById('str-purchase-price')?.value);
+      const nightly = parseCurrency(document.getElementById('str-nightly-rate')?.value);
+      const occupancy = parseFloat(document.getElementById('str-occupancy')?.value) || 70;
+      const dp = parseFloat(document.getElementById('str-down-payment')?.value) || 20;
+      const monthlyRent = nightly * 30.44 * (occupancy / 100); // avg days/month * occupancy
+      const valueEl = document.getElementById('dscr-value-str');
+      const labelEl = document.getElementById('dscr-label-str');
+      if (valueEl && labelEl) calculateAndDisplayDSCR(monthlyRent, price, dp, valueEl, labelEl);
+    }
+
+    // DSCR calc for Refi
+    function recalcRefi_DSCR() {
+      const price = parseCurrency(document.getElementById('refi-value')?.value);
+      const rent = parseCurrency(document.getElementById('refi-rental-income')?.value);
+      const balance = parseCurrency(document.getElementById('refi-balance')?.value);
+      // For refi, use balance/value as effective LTV
+      const ltv = price > 0 ? (balance / price) * 100 : 75;
+      const dp = 100 - ltv;
+      const valueEl = document.getElementById('dscr-value-refi');
+      const labelEl = document.getElementById('dscr-label-refi');
+      if (valueEl && labelEl) calculateAndDisplayDSCR(rent, price, dp, valueEl, labelEl);
+    }
+
+    // Attach DSCR calc listeners
+    ['dscr-purchase-price', 'dscr-rental-income', 'dscr-down-payment'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', recalcDSCR);
+      if (el) el.addEventListener('change', recalcDSCR);
+    });
+
+    ['str-purchase-price', 'str-nightly-rate', 'str-occupancy', 'str-down-payment'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', recalcSTR_DSCR);
+      if (el) el.addEventListener('change', recalcSTR_DSCR);
+    });
+
+    ['refi-value', 'refi-rental-income', 'refi-balance'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', recalcRefi_DSCR);
+      if (el) el.addEventListener('change', recalcRefi_DSCR);
+    });
+
+    // ---- Currency Formatting ----
+    form.querySelectorAll('.currency-input').forEach(input => {
+      input.addEventListener('blur', (e) => {
+        let val = e.target.value.replace(/[^0-9.]/g, '');
+        if (val) {
+          const num = parseFloat(val);
+          if (!isNaN(num)) {
+            e.target.value = '$' + num.toLocaleString('en-US');
+          }
+        }
+      });
+      input.addEventListener('focus', (e) => {
+        e.target.value = e.target.value.replace(/[$,]/g, '');
+      });
+    });
+
+    // ---- Phone Number Formatting ----
+    form.querySelectorAll('input[type="tel"]').forEach(input => {
+      input.addEventListener('input', (e) => {
+        let val = e.target.value.replace(/\D/g, '');
+        if (val.length > 10) val = val.substr(0, 10);
+        if (val.length >= 7) {
+          val = '(' + val.substr(0,3) + ') ' + val.substr(3,3) + '-' + val.substr(6);
+        } else if (val.length >= 4) {
+          val = '(' + val.substr(0,3) + ') ' + val.substr(3);
+        }
+        e.target.value = val;
+      });
+    });
+
+    // ---- Validation ----
+    function validateStep(stepIndex) {
+      const step = steps[stepIndex];
+      let valid = true;
+
+      // Step 0: loan type must be selected
+      if (stepIndex === 0) {
+        if (!selectedLoanType) {
+          // Flash the tile grid
+          const grid = step.querySelector('.loan-type-grid');
+          if (grid) {
+            grid.style.outline = '2px solid var(--error)';
+            grid.style.borderRadius = '12px';
+            setTimeout(() => { grid.style.outline = ''; }, 2000);
+          }
+          return false;
+        }
+        return true;
+      }
+
+      // Step 1: validate visible required fields only
+      if (stepIndex === 1) {
+        // Validate "all" fields
+        const allFields = step.querySelector('[data-loan-type="all"]');
+        if (allFields) {
+          allFields.querySelectorAll('[required]').forEach(field => {
+            if (!validateField(field)) valid = false;
+          });
+        }
+
+        // Validate conditional fields for the active loan type
+        const activeSection = step.querySelector(`.conditional-section.visible`);
+        if (activeSection) {
+          activeSection.querySelectorAll('[required]').forEach(field => {
+            if (!validateField(field)) valid = false;
+          });
+        }
+
+        if (!valid) scrollToFirstError(step);
+        return valid;
+      }
+
+      // Step 2: standard required field validation
+      if (stepIndex === 2) {
+        step.querySelectorAll('[required]').forEach(field => {
+          if (!validateField(field)) valid = false;
+        });
+        if (!valid) scrollToFirstError(step);
+        return valid;
+      }
+
+      // Step 3: contact fields + consent checkboxes
+      if (stepIndex === 3) {
+        step.querySelectorAll('input[required], select[required]').forEach(field => {
+          if (field.type === 'checkbox') return; // handle separately
+          if (!validateField(field)) valid = false;
+        });
+
+        // Email format
+        const emailField = document.getElementById('email');
+        if (emailField && emailField.value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(emailField.value)) {
+            emailField.classList.add('error');
+            const err = emailField.parentElement.querySelector('.form-error');
+            if (err) err.style.display = 'block';
+            valid = false;
+          }
+        }
+
+        // Phone format
+        const phoneField = document.getElementById('phone');
+        if (phoneField && phoneField.value) {
+          const digits = phoneField.value.replace(/\D/g, '');
+          if (digits.length < 10) {
+            phoneField.classList.add('error');
+            const err = phoneField.parentElement.querySelector('.form-error');
+            if (err) err.style.display = 'block';
+            valid = false;
+          }
+        }
+
+        // Business purpose checkbox
+        const bpCheckbox = document.getElementById('business-purpose');
+        const bpError = document.getElementById('business-purpose-error');
+        if (bpCheckbox && !bpCheckbox.checked) {
+          if (bpError) bpError.style.display = 'block';
+          valid = false;
+        } else {
+          if (bpError) bpError.style.display = 'none';
+        }
+
+        // TCPA consent checkbox
+        const tcpaCheckbox = document.getElementById('tcpa-consent');
+        const tcpaError = document.getElementById('tcpa-consent-error');
+        if (tcpaCheckbox && !tcpaCheckbox.checked) {
+          if (tcpaError) tcpaError.style.display = 'block';
+          valid = false;
+        } else {
+          if (tcpaError) tcpaError.style.display = 'none';
+        }
+
+        if (!valid) scrollToFirstError(step);
+        return valid;
+      }
+
+      return valid;
+    }
+
+    function validateField(field) {
+      field.classList.remove('error');
+      const errorEl = field.parentElement.querySelector('.form-error');
+      if (errorEl) errorEl.style.display = 'none';
+
+      if (!field.value || !field.value.trim()) {
+        field.classList.add('error');
+        if (errorEl) errorEl.style.display = 'block';
+        return false;
+      }
+      return true;
+    }
+
+    function scrollToFirstError(container) {
+      const firstError = container.querySelector('.form-control.error, .consent-error[style*="block"]');
+      if (firstError) {
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (firstError.focus) firstError.focus();
+      }
+    }
+
+    // ---- Clear errors on input ----
+    form.querySelectorAll('.form-control').forEach(field => {
+      field.addEventListener('input', () => {
+        field.classList.remove('error');
+        const err = field.parentElement.querySelector('.form-error');
+        if (err) err.style.display = 'none';
+      });
+    });
+
+    // ---- Form Submission ----
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!validateStep(currentStep)) return;
+
+      // Collect all form data
+      const formData = {
+        loanType: selectedLoanType,
+        timestamp: new Date().toISOString(),
+        fields: {}
+      };
+
+      // Gather all visible inputs
+      form.querySelectorAll('input, select, textarea').forEach(field => {
+        if (!field.name || field.type === 'file') return;
+        // Skip fields in hidden conditional sections
+        const condSection = field.closest('.conditional-section');
+        if (condSection && !condSection.classList.contains('visible')) return;
+
+        if (field.type === 'radio') {
+          if (field.checked) formData.fields[field.name] = field.value;
+        } else if (field.type === 'checkbox') {
+          formData.fields[field.name] = field.checked;
+        } else {
+          formData.fields[field.name] = field.value;
+        }
+      });
+
+      // Store in localStorage
+      const submissions = JSON.parse(localStorage.getItem('ccc_submissions') || '[]');
+      submissions.push(formData);
+      localStorage.setItem('ccc_submissions', JSON.stringify(submissions));
+
+      // Clear draft
+      localStorage.removeItem('ccc_form_draft');
+
+      // Show success
+      showSuccessState();
+    });
+
+    function showSuccessState() {
+      const body = form.querySelector('.form-body');
+      body.innerHTML = '\
+        <div style="text-align: center; padding: 3rem 1rem;">\
+          <div class="success-check">&#10003;</div>\
+          <h2 style="margin-bottom: 1rem; color: var(--navy);">Deal Submitted Successfully</h2>\
+          <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 2rem; font-size: 1.05rem;">\
+            We have received your scenario inquiry. A loan specialist will review your deal and reach out within\
+            <strong style="color: var(--gold-dark);">15 minutes</strong> during business hours (M-F, 8am-6pm ET).\
+          </p>\
+          <div style="background: var(--gray-100); border-radius: 12px; padding: 1.5rem; max-width: 420px; margin: 0 auto 2rem; text-align: left;">\
+            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.75rem; font-weight: 600;">What happens next:</p>\
+            <ol style="padding-left: 1.25rem; list-style: decimal; color: var(--text-secondary); font-size: 0.9rem;">\
+              <li style="margin-bottom: 0.5rem;">Our system matches your deal to the best lenders in our network</li>\
+              <li style="margin-bottom: 0.5rem;">A specialist reviews and optimizes the match</li>\
+              <li style="margin-bottom: 0.5rem;">You receive competitive term sheets to compare</li>\
+              <li>Choose your lender and close in as fast as 7 days</li>\
+            </ol>\
+          </div>\
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">\
+            <a href="index.html" class="btn btn-primary">Back to Home</a>\
+            <a href="submit.html" class="btn btn-outline">Submit Another Deal</a>\
+          </div>\
+        </div>';
+
+      // Mark all progress steps as completed
+      progressSteps.forEach(s => {
+        s.classList.remove('active');
+        s.classList.add('completed');
+      });
+
+      window.scrollTo({ top: form.offsetTop - 100, behavior: 'smooth' });
+    }
+
+    // ---- localStorage Auto-Save ----
+    function saveToLocalStorage() {
+      const draft = {
+        step: currentStep,
+        loanType: selectedLoanType,
+        fields: {}
+      };
+
+      form.querySelectorAll('input, select, textarea').forEach(field => {
+        if (!field.name || field.type === 'file') return;
+        if (field.type === 'radio') {
+          if (field.checked) draft.fields[field.name] = field.value;
+        } else if (field.type === 'checkbox') {
+          draft.fields[field.name] = field.checked;
+        } else {
+          draft.fields[field.name] = field.value;
+        }
+      });
+
+      localStorage.setItem('ccc_form_draft', JSON.stringify(draft));
+      showAutosave();
+    }
+
+    function showAutosave() {
+      if (!autosaveIndicator) return;
+      autosaveIndicator.classList.add('show');
+      setTimeout(() => autosaveIndicator.classList.remove('show'), 2000);
+    }
+
+    function restoreFromLocalStorage() {
+      const draft = JSON.parse(localStorage.getItem('ccc_form_draft') || 'null');
+      if (!draft) return;
+
+      // Restore loan type
+      if (draft.loanType) {
+        selectedLoanType = draft.loanType;
+        const opt = form.querySelector(`.loan-type-option[data-value="${draft.loanType}"]`);
+        if (opt) {
+          opt.classList.add('selected');
+          const radio = opt.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+        }
+        showConditionalFields(draft.loanType);
+      }
+
+      // Restore field values
+      if (draft.fields) {
+        Object.entries(draft.fields).forEach(([name, value]) => {
+          const field = form.querySelector(`[name="${name}"]`);
+          if (!field) return;
+          if (field.type === 'radio') {
+            const radio = form.querySelector(`[name="${name}"][value="${value}"]`);
+            if (radio) radio.checked = true;
+          } else if (field.type === 'checkbox') {
+            field.checked = !!value;
+          } else {
+            field.value = value;
+          }
+        });
+      }
+
+      // Restore step
+      if (draft.step && draft.step > 0) {
+        showStep(draft.step);
+      }
+
+      // Trigger DSCR calcs
+      recalcDSCR();
+      recalcSTR_DSCR();
+      recalcRefi_DSCR();
+    }
+
+    // Auto-save on any field change
+    form.addEventListener('input', () => {
+      clearTimeout(form._saveTimeout);
+      form._saveTimeout = setTimeout(saveToLocalStorage, 500);
+    });
+    form.addEventListener('change', () => {
+      clearTimeout(form._saveTimeout);
+      form._saveTimeout = setTimeout(saveToLocalStorage, 300);
+    });
+
+    // ---- Initialize ----
+    showStep(0);
+    restoreFromLocalStorage();
+
+  });
+  </script>
+
+</body>
+</html>

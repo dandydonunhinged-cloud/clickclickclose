@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Property Deal Analyzer | Click Click Close</title>
+  <meta name="description" content="Free investment property calculator. Analyze cash flow, DSCR, cap rate, and cash-on-cash ROI in real time. Works with any funding source.">
+  <meta name="keywords" content="investment property calculator, rental property ROI, DSCR calculator, cash on cash return, cap rate calculator, real estate investor tools">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Investment Property Deal Analyzer | Click Click Close">
+  <meta property="og:description" content="Free real-time deal analyzer for real estate investors. Cash flow, ROI, DSCR, cap rate — any funding source.">
+  <meta property="og:url" content="https://clickclickclose.click/calculator.html">
+  <meta property="og:site_name" content="Click Click Close">
+
+  <link rel="canonical" href="https://clickclickclose.click/calculator.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Investment Property Deal Analyzer",
+    "description": "Free investment property calculator for real estate investors.",
+    "url": "https://clickclickclose.click/calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <style>
+    .calc-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 120px 0 40px;
+      text-align: center;
+    }
+    .calc-hero h1 { color: var(--white); margin-bottom: 10px; font-size: clamp(1.6rem, 4vw, 2.5rem); }
+    .calc-hero p { color: var(--gray-200); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+    .calc-page { background: var(--gray-50); padding: 40px 0 80px; }
+
+    .calc-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .calc-inputs {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      padding: 32px;
+    }
+
+    .calc-section { margin-bottom: 32px; }
+    .calc-section:last-child { margin-bottom: 0; }
+    .calc-section h3 {
+      color: var(--navy); font-size: 1.1rem; margin-bottom: 16px;
+      padding-bottom: 8px; border-bottom: 2px solid var(--gold);
+    }
+
+    .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+    .calc-field { margin-bottom: 14px; }
+    .calc-field label {
+      display: block; font-size: 0.85rem; font-weight: 600;
+      color: var(--gray-800); margin-bottom: 4px;
+    }
+    .calc-field input, .calc-field select {
+      width: 100%; padding: 10px 14px;
+      border: 2px solid var(--gray-200); border-radius: 8px;
+      font-size: 0.95rem; font-family: var(--font);
+      transition: border-color 0.3s;
+    }
+    .calc-field input:focus, .calc-field select:focus {
+      outline: none; border-color: var(--gold);
+    }
+    .calc-field .hint { font-size: 0.75rem; color: var(--gray-600); margin-top: 2px; }
+
+    .str-toggle {
+      display: flex; gap: 8px; margin-bottom: 14px;
+    }
+    .str-toggle button {
+      flex: 1; padding: 10px; border: 2px solid var(--gray-200);
+      border-radius: 8px; background: var(--white); cursor: pointer;
+      font-family: var(--font); font-weight: 600; font-size: 0.85rem;
+      transition: all 0.3s; color: var(--gray-600);
+    }
+    .str-toggle button.active {
+      border-color: var(--gold); background: rgba(212, 168, 67, 0.08);
+      color: var(--navy);
+    }
+
+    .str-fields { display: none; }
+    .str-fields.active { display: block; }
+    .ltr-fields { display: block; }
+    .ltr-fields.hidden { display: none; }
+
+    /* Results sidebar */
+    .calc-results {
+      position: sticky; top: 100px; align-self: start;
+    }
+    .results-card {
+      background: var(--navy); color: var(--white);
+      border-radius: 16px; padding: 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .results-card h3 {
+      color: var(--gold); font-size: 1.1rem; margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .result-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { font-size: 0.85rem; color: var(--gray-200); }
+    .result-value { font-weight: 700; font-size: 1rem; }
+    .result-value.positive { color: #4ade80; }
+    .result-value.negative { color: #f87171; }
+    .result-value.neutral { color: var(--gold); }
+
+    .result-big {
+      text-align: center; padding: 20px 0; margin: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .result-big .label { font-size: 0.85rem; color: var(--gray-200); margin-bottom: 4px; }
+    .result-big .value { font-size: 2.2rem; font-weight: 800; }
+
+    .verdict-box {
+      margin-top: 16px; padding: 16px; border-radius: 10px;
+      text-align: center;
+    }
+    .verdict-box.green { background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.3); }
+    .verdict-box.yellow { background: rgba(212, 168, 67, 0.12); border: 1px solid rgba(212, 168, 67, 0.3); }
+    .verdict-box.red { background: rgba(248, 113, 113, 0.12); border: 1px solid rgba(248, 113, 113, 0.3); }
+    .verdict-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 4px; }
+    .verdict-box.green .verdict-title { color: #4ade80; }
+    .verdict-box.yellow .verdict-title { color: var(--gold); }
+    .verdict-box.red .verdict-title { color: #f87171; }
+    .verdict-reason { font-size: 0.8rem; color: var(--gray-200); }
+
+    .results-cta {
+      margin-top: 20px;
+    }
+    .results-cta a {
+      display: block; text-align: center;
+      background: var(--gold); color: var(--navy);
+      padding: 14px; border-radius: 8px;
+      font-weight: 700; font-size: 0.95rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      transition: background 0.3s;
+    }
+    .results-cta a:hover { background: var(--gold-light); color: var(--navy); }
+
+    .calc-actions {
+      display: flex; gap: 12px; margin-top: 24px;
+    }
+    .calc-actions button {
+      flex: 1; padding: 12px; border: 2px solid var(--gray-200);
+      border-radius: 8px; background: var(--white); cursor: pointer;
+      font-family: var(--font); font-weight: 600; font-size: 0.85rem;
+      transition: all 0.3s; color: var(--gray-600);
+    }
+    .calc-actions button:hover { border-color: var(--gold); color: var(--navy); }
+
+    @media (max-width: 900px) {
+      .calc-layout { grid-template-columns: 1fr; }
+      .calc-results { position: static; }
+      .calc-row { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .header, .footer, .mobile-menu, .calc-actions, .results-cta, .nav { display: none !important; }
+      .calc-hero { padding: 20px 0; }
+      .calc-page { padding: 0; background: white; }
+      .calc-layout { display: block; }
+      .calc-results { position: static; margin-top: 24px; }
+      .results-card { box-shadow: none; border: 2px solid #333; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-icon">CCC</div>
+          Click Click <span>Close</span>
+        </a>
+        <div class="nav-links">
+          <div class="dropdown">
+            <a class="dropdown-toggle">Loan Types</a>
+            <div class="dropdown-menu">
+              <a href="dscr.html">DSCR / Rental Loans</a>
+              <a href="fix-and-flip.html">Fix &amp; Flip</a>
+              <a href="bridge.html">Bridge Loans</a>
+              <a href="construction.html">Construction</a>
+              <a href="str.html">Short-Term Rental</a>
+              <a href="portfolio.html">Portfolio / Blanket</a>
+            </div>
+          </div>
+          <a href="about.html">About</a>
+          <a href="calculator.html">Deal Analyzer</a>
+          <a href="submit.html">Submit a Deal</a>
+        </div>
+        <div class="nav-cta">
+          <a href="submit.html" class="btn btn-primary btn-sm">Submit Your Deal</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="calculator.html">Deal Analyzer</a>
+    <a href="submit.html">Submit a Deal</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="calc-hero">
+    <div class="container">
+      <h1>Deal Analyzer</h1>
+      <p>Run your numbers before you submit. Works with any funding source — private, hard money, bank, or seller finance.</p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="calc-page">
+    <div class="calc-layout">
+
+      <!-- INPUTS -->
+      <div class="calc-inputs">
+
+        <!-- Purchase & Financing -->
+        <div class="calc-section">
+          <h3>Purchase &amp; Financing</h3>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="purchasePrice">Purchase Price</label>
+              <input type="text" id="purchasePrice" placeholder="$300,000" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="downPaymentPct">Down Payment (%)</label>
+              <input type="number" id="downPaymentPct" value="25" min="0" max="100" step="1">
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Down Payment ($)</label>
+              <input type="text" id="downPaymentAmt" readonly style="background:var(--gray-50);">
+            </div>
+            <div class="calc-field">
+              <label>Loan Amount</label>
+              <input type="text" id="loanAmount" readonly style="background:var(--gray-50);">
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="interestRate">Interest Rate (%)</label>
+              <input type="number" id="interestRate" value="8.0" min="0" max="30" step="0.125">
+            </div>
+            <div class="calc-field">
+              <label for="loanTerm">Loan Term (years)</label>
+              <select id="loanTerm">
+                <option value="1">1 year (bridge/flip)</option>
+                <option value="2">2 years</option>
+                <option value="5">5 years</option>
+                <option value="10">10 years</option>
+                <option value="15">15 years</option>
+                <option value="20">20 years</option>
+                <option value="25">25 years</option>
+                <option value="30" selected>30 years</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label for="closingCosts">Estimated Closing Costs ($)</label>
+            <input type="text" id="closingCosts" placeholder="$5,000" inputmode="numeric">
+            <div class="hint">Points, title, appraisal, insurance — typically 2-5% of loan amount</div>
+          </div>
+        </div>
+
+        <!-- Income -->
+        <div class="calc-section">
+          <h3>Income</h3>
+          <div class="str-toggle">
+            <button id="btnLTR" class="active" onclick="setRentalType('ltr')">Long-Term Rental</button>
+            <button id="btnSTR" onclick="setRentalType('str')">Short-Term Rental (Airbnb)</button>
+          </div>
+
+          <div class="ltr-fields" id="ltrFields">
+            <div class="calc-field">
+              <label for="monthlyRent">Monthly Rental Income</label>
+              <input type="text" id="monthlyRent" placeholder="$2,000" inputmode="numeric">
+            </div>
+          </div>
+
+          <div class="str-fields" id="strFields">
+            <div class="calc-row">
+              <div class="calc-field">
+                <label for="nightlyRate">Average Nightly Rate</label>
+                <input type="text" id="nightlyRate" placeholder="$150" inputmode="numeric">
+              </div>
+              <div class="calc-field">
+                <label for="occupancy">Occupancy (%)</label>
+                <select id="occupancy">
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70" selected>70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                </select>
+              </div>
+            </div>
+            <div class="calc-field">
+              <label>Projected Monthly Income</label>
+              <input type="text" id="strMonthly" readonly style="background:var(--gray-50);">
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <label for="otherIncome">Other Monthly Income (laundry, parking, etc.)</label>
+            <input type="text" id="otherIncome" placeholder="$0" inputmode="numeric">
+          </div>
+        </div>
+
+        <!-- Expenses -->
+        <div class="calc-section">
+          <h3>Expenses</h3>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="propertyTax">Annual Property Taxes</label>
+              <input type="text" id="propertyTax" placeholder="$4,800" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="insurance">Annual Insurance</label>
+              <input type="text" id="insurance" placeholder="$2,400" inputmode="numeric">
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="hoa">Monthly HOA / Condo Fees</label>
+              <input type="text" id="hoa" placeholder="$0" inputmode="numeric">
+            </div>
+            <div class="calc-field">
+              <label for="utilities">Monthly Utilities (if landlord-paid)</label>
+              <input type="text" id="utilities" placeholder="$0" inputmode="numeric">
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="calc-field">
+              <label for="mgmtPct">Property Management (%)</label>
+              <input type="number" id="mgmtPct" value="10" min="0" max="50" step="1">
+            </div>
+            <div class="calc-field">
+              <label for="maintPct">Maintenance Reserve (%)</label>
+              <input type="number" id="maintPct" value="5" min="0" max="25" step="1">
+            </div>
+          </div>
+          <div class="calc-field">
+            <label for="vacancyPct">Vacancy Allowance (%)</label>
+            <input type="number" id="vacancyPct" value="8" min="0" max="50" step="1">
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="calc-actions">
+          <button onclick="resetCalc()">Reset All</button>
+          <button onclick="window.print()">Print / Save</button>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="calc-results">
+        <div class="results-card">
+          <h3>Deal Analysis</h3>
+
+          <div class="result-big">
+            <div class="label">Monthly Cash Flow</div>
+            <div class="value" id="resCashFlow">$0</div>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">Annual Cash Flow</span>
+            <span class="result-value neutral" id="resAnnualCF">$0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Cash-on-Cash Return</span>
+            <span class="result-value neutral" id="resCoC">0%</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">DSCR Ratio</span>
+            <span class="result-value neutral" id="resDSCR">0.00</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Cap Rate</span>
+            <span class="result-value neutral" id="resCapRate">0%</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Gross Rent Multiplier</span>
+            <span class="result-value neutral" id="resGRM">0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Break-Even Occupancy</span>
+            <span class="result-value neutral" id="resBEO">0%</span>
+          </div>
+
+          <div class="result-item" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:12px; margin-top:4px;">
+            <span class="result-label">Monthly P&amp;I</span>
+            <span class="result-value" id="resPI" style="color:var(--gray-200);">$0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Monthly PITIA</span>
+            <span class="result-value" id="resPITIA" style="color:var(--gray-200);">$0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Total Cash Invested</span>
+            <span class="result-value" id="resTotalCash" style="color:var(--gray-200);">$0</span>
+          </div>
+
+          <div class="verdict-box green" id="verdictBox">
+            <div class="verdict-title" id="verdictTitle">Enter your deal above</div>
+            <div class="verdict-reason" id="verdictReason">Fill in purchase price and rental income to see your analysis.</div>
+          </div>
+
+          <div class="results-cta">
+            <a href="submit.html" id="submitLink">Submit This Deal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;">
+            <div class="logo-icon">CCC</div>
+            Click Click <span>Close</span>
+          </a>
+          <p>Investment property deal matching. Submit your deal, get matched with the right funding source in minutes.</p>
+        </div>
+        <div>
+          <h4>Loan Types</h4>
+          <ul>
+            <li><a href="dscr.html">DSCR Loans</a></li>
+            <li><a href="fix-and-flip.html">Fix &amp; Flip</a></li>
+            <li><a href="bridge.html">Bridge Loans</a></li>
+            <li><a href="construction.html">Construction</a></li>
+            <li><a href="str.html">Short-Term Rental</a></li>
+            <li><a href="portfolio.html">Portfolio Loans</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="calculator.html">Deal Analyzer</a></li>
+            <li><a href="submit.html">Submit a Deal</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: deals@clickclickclose.click</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Click Click Close. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // =============================================
+    // DEAL ANALYZER — Click Click Close
+    // All calculations client-side, real-time
+    // =============================================
+
+    let rentalType = 'ltr';
+
+    function setRentalType(type) {
+      rentalType = type;
+      document.getElementById('btnLTR').classList.toggle('active', type === 'ltr');
+      document.getElementById('btnSTR').classList.toggle('active', type === 'str');
+      document.getElementById('ltrFields').classList.toggle('hidden', type === 'str');
+      document.getElementById('strFields').classList.toggle('active', type === 'str');
+      calculate();
+    }
+
+    // Parse currency input — strip $, commas
+    function parseCurrency(id) {
+      const el = document.getElementById(id);
+      if (!el) return 0;
+      const val = el.value.replace(/[$,\s]/g, '');
+      return parseFloat(val) || 0;
+    }
+
+    function parseNum(id) {
+      const el = document.getElementById(id);
+      if (!el) return 0;
+      return parseFloat(el.value) || 0;
+    }
+
+    function fmt(n) {
+      if (isNaN(n) || !isFinite(n)) return '$0';
+      const neg = n < 0;
+      const abs = Math.abs(Math.round(n));
+      const str = abs.toLocaleString('en-US');
+      return (neg ? '-$' : '$') + str;
+    }
+
+    function fmtPct(n) {
+      if (isNaN(n) || !isFinite(n)) return '0%';
+      return n.toFixed(1) + '%';
+    }
+
+    function colorClass(value, good, bad) {
+      if (value >= good) return 'positive';
+      if (value <= bad) return 'negative';
+      return 'neutral';
+    }
+
+    function calculate() {
+      // Purchase & Financing
+      const price = parseCurrency('purchasePrice');
+      const dpPct = parseNum('downPaymentPct');
+      const dpAmt = price * (dpPct / 100);
+      const loan = price - dpAmt;
+      const rate = parseNum('interestRate');
+      const termYears = parseInt(document.getElementById('loanTerm').value) || 30;
+      const closing = parseCurrency('closingCosts');
+
+      document.getElementById('downPaymentAmt').value = fmt(dpAmt);
+      document.getElementById('loanAmount').value = fmt(loan);
+
+      // Monthly P&I (amortizing)
+      let monthlyPI = 0;
+      if (loan > 0 && rate > 0 && termYears > 0) {
+        const r = (rate / 100) / 12;
+        const n = termYears * 12;
+        monthlyPI = loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      } else if (loan > 0 && rate === 0) {
+        monthlyPI = loan / (termYears * 12);
+      }
+
+      // Income
+      let monthlyIncome = 0;
+      if (rentalType === 'ltr') {
+        monthlyIncome = parseCurrency('monthlyRent');
+      } else {
+        const nightly = parseCurrency('nightlyRate');
+        const occ = parseNum('occupancy') / 100;
+        const strMonthly = nightly * 30.44 * occ;
+        document.getElementById('strMonthly').value = fmt(strMonthly);
+        monthlyIncome = strMonthly;
+      }
+      const otherIncome = parseCurrency('otherIncome');
+      const totalMonthlyIncome = monthlyIncome + otherIncome;
+
+      // Expenses
+      const taxAnnual = parseCurrency('propertyTax');
+      const insAnnual = parseCurrency('insurance');
+      const taxMonthly = taxAnnual / 12;
+      const insMonthly = insAnnual / 12;
+      const hoa = parseCurrency('hoa');
+      const utilities = parseCurrency('utilities');
+      const mgmtPct = parseNum('mgmtPct') / 100;
+      const maintPct = parseNum('maintPct') / 100;
+      const vacPct = parseNum('vacancyPct') / 100;
+
+      const mgmt = monthlyIncome * mgmtPct;
+      const maint = monthlyIncome * maintPct;
+      const vacancy = monthlyIncome * vacPct;
+      const totalExpenses = taxMonthly + insMonthly + hoa + utilities + mgmt + maint + vacancy;
+
+      // PITIA
+      const pitia = monthlyPI + taxMonthly + insMonthly + hoa;
+
+      // NOI
+      const effectiveIncome = totalMonthlyIncome - vacancy;
+      const monthlyNOI = effectiveIncome - (taxMonthly + insMonthly + hoa + utilities + mgmt + maint);
+      const annualNOI = monthlyNOI * 12;
+
+      // Cash flow
+      const monthlyCF = totalMonthlyIncome - totalExpenses - monthlyPI;
+      const annualCF = monthlyCF * 12;
+
+      // Total cash invested
+      const totalCash = dpAmt + closing;
+
+      // Metrics
+      const coc = totalCash > 0 ? (annualCF / totalCash) * 100 : 0;
+      const annualDebtService = monthlyPI * 12;
+      const dscr = annualDebtService > 0 ? annualNOI / annualDebtService : 0;
+      const capRate = price > 0 ? (annualNOI / price) * 100 : 0;
+      const annualRent = totalMonthlyIncome * 12;
+      const grm = annualRent > 0 ? price / annualRent : 0;
+      const potentialGross = monthlyIncome * 12;
+      const beo = potentialGross > 0 ? ((totalExpenses * 12 + annualDebtService) / potentialGross) * 100 : 0;
+
+      // Update results
+      const cfEl = document.getElementById('resCashFlow');
+      cfEl.textContent = fmt(monthlyCF);
+      cfEl.className = 'value ' + colorClass(monthlyCF, 1, -1);
+
+      setResult('resAnnualCF', fmt(annualCF), colorClass(annualCF, 1, -1));
+      setResult('resCoC', fmtPct(coc), colorClass(coc, 8, 0));
+      setResult('resDSCR', dscr.toFixed(2), colorClass(dscr, 1.25, 1.0));
+      setResult('resCapRate', fmtPct(capRate), colorClass(capRate, 6, 3));
+      setResult('resGRM', grm.toFixed(1), 'neutral');
+      setResult('resBEO', fmtPct(beo), beo > 85 ? 'negative' : beo > 70 ? 'neutral' : 'positive');
+
+      document.getElementById('resPI').textContent = fmt(monthlyPI);
+      document.getElementById('resPITIA').textContent = fmt(pitia);
+      document.getElementById('resTotalCash').textContent = fmt(totalCash);
+
+      // Verdict
+      updateVerdict(monthlyCF, dscr, coc, capRate, price);
+
+      // Save to localStorage
+      saveState();
+
+      // Update submit link with params
+      if (price > 0) {
+        const params = new URLSearchParams({
+          price: Math.round(price),
+          rent: Math.round(monthlyIncome),
+          dp: Math.round(dpPct),
+          dscr: dscr.toFixed(2)
+        });
+        document.getElementById('submitLink').href = 'submit.html?' + params.toString();
+      }
+    }
+
+    function setResult(id, text, cls) {
+      const el = document.getElementById(id);
+      el.textContent = text;
+      el.className = 'result-value ' + cls;
+    }
+
+    function updateVerdict(cf, dscr, coc, cap, price) {
+      const box = document.getElementById('verdictBox');
+      const title = document.getElementById('verdictTitle');
+      const reason = document.getElementById('verdictReason');
+
+      if (price === 0) {
+        box.className = 'verdict-box';
+        title.textContent = 'Enter your deal above';
+        reason.textContent = 'Fill in purchase price and rental income to see your analysis.';
+        return;
+      }
+
+      const reasons = [];
+
+      if (cf > 0 && dscr >= 1.25 && coc >= 8) {
+        box.className = 'verdict-box green';
+        title.textContent = 'Strong Deal';
+        if (dscr >= 1.5) reasons.push('Excellent DSCR — qualifies at most lenders');
+        else reasons.push('DSCR qualifies for standard programs');
+        if (coc >= 12) reasons.push('Outstanding cash-on-cash return');
+        else reasons.push('Solid cash-on-cash return');
+        if (cf >= 500) reasons.push('Strong monthly cash flow');
+      } else if (cf > 0 && dscr >= 1.0) {
+        box.className = 'verdict-box yellow';
+        title.textContent = 'Marginal Deal';
+        if (dscr < 1.25) reasons.push('DSCR below 1.25 — may need higher down payment or better rate');
+        if (coc < 8) reasons.push('Cash-on-cash below 8% — consider negotiating price');
+        if (cf < 200) reasons.push('Tight cash flow — small expense increase could turn negative');
+      } else {
+        box.className = 'verdict-box red';
+        title.textContent = 'Needs Work';
+        if (cf <= 0) reasons.push('Negative cash flow — deal loses money monthly');
+        if (dscr < 1.0) reasons.push('DSCR below 1.0 — will not qualify at most lenders');
+        if (coc < 0) reasons.push('Negative return on investment');
+        reasons.push('Consider: lower price, higher rent, larger down payment, or better rate');
+      }
+
+      reason.textContent = reasons.join('. ') + '.';
+    }
+
+    // Format currency inputs on blur
+    function formatCurrencyInput(el) {
+      const val = parseFloat(el.value.replace(/[$,\s]/g, ''));
+      if (!isNaN(val) && val > 0) {
+        el.value = '$' + val.toLocaleString('en-US');
+      }
+    }
+
+    // localStorage
+    const STORAGE_KEY = 'ccc_calc_v1';
+
+    function saveState() {
+      const fields = ['purchasePrice', 'downPaymentPct', 'interestRate', 'closingCosts',
+        'monthlyRent', 'nightlyRate', 'otherIncome', 'propertyTax', 'insurance',
+        'hoa', 'utilities', 'mgmtPct', 'maintPct', 'vacancyPct'];
+      const state = { rentalType };
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) state[id] = el.value;
+      });
+      state.loanTerm = document.getElementById('loanTerm').value;
+      state.occupancy = document.getElementById('occupancy').value;
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        const fields = ['purchasePrice', 'downPaymentPct', 'interestRate', 'closingCosts',
+          'monthlyRent', 'nightlyRate', 'otherIncome', 'propertyTax', 'insurance',
+          'hoa', 'utilities', 'mgmtPct', 'maintPct', 'vacancyPct'];
+        fields.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && state[id] !== undefined) el.value = state[id];
+        });
+        if (state.loanTerm) document.getElementById('loanTerm').value = state.loanTerm;
+        if (state.occupancy) document.getElementById('occupancy').value = state.occupancy;
+        if (state.rentalType) setRentalType(state.rentalType);
+      } catch(e) {}
+    }
+
+    function resetCalc() {
+      const inputs = document.querySelectorAll('.calc-inputs input[type="text"], .calc-inputs input[type="number"]');
+      inputs.forEach(el => {
+        if (el.readOnly) { el.value = ''; return; }
+        if (el.type === 'number' && el.defaultValue) { el.value = el.defaultValue; return; }
+        el.value = '';
+      });
+      document.getElementById('loanTerm').value = '30';
+      document.getElementById('occupancy').value = '70';
+      setRentalType('ltr');
+      try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+      calculate();
+    }
+
+    // Bind events
+    document.addEventListener('DOMContentLoaded', function() {
+      const allInputs = document.querySelectorAll('.calc-inputs input, .calc-inputs select');
+      allInputs.forEach(el => {
+        el.addEventListener('input', calculate);
+        if (el.type === 'text' && el.id !== 'downPaymentAmt' && el.id !== 'loanAmount' && el.id !== 'strMonthly') {
+          el.addEventListener('blur', function() { formatCurrencyInput(this); calculate(); });
+        }
+      });
+      loadState();
+      calculate();
+    });
+  </script>
+</body>
+</html>

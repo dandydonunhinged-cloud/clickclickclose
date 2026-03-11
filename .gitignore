@@ -1,0 +1,12 @@
+seo_data.json
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+calculator_research.md
+competitor_analysis.md
+form_research.md
+seo_config.json
+seo_engine.py
