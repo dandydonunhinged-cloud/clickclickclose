@@ -105,6 +105,168 @@ Brand: "Click n' Close" exists but different market. CCC is clean.
 DSCR market: $2B+/mo, #1 private lending product.
 TAM: 1.28M denied borrowers/year. Nobody follows up. CCC does.
 Louisiana: NOLA/BR/Lafayette/Shreveport all viable.
+
+# Per-Scene Track Architecture — Build Spec
+
+## Originated by Don Brown, 2026-03-12 (woke up with this)
+
+## Written by Robin (App Claude)
+
+## For: Strategos + Builder Claude — implement in EP3-6 build scripts
+
+-----
+
+## The Problem This Solves
+
+Current build scripts stack all clips sequentially on shared tracks. When one segment is off — audio drift, timing error, wrong clip — everything downstream shifts. Fixing Scene 47 breaks Scene 48-118. Sync is global and fragile.
+
+-----
+
+## The Solution: Per-Scene Track Stacks
+
+Each scene gets its own dedicated track pair:
+
+- **Video track N** = Scene N visuals
+- **Audio track N** = Scene N narration
+
+Tracks are reusable across episodes (same structure, swap the clips).
+
+### Example: EP4 (118 segments)
+
+Instead of:
+
+```
+V1: [clip1][clip2][clip3]...[clip118]
+A1: [seg1][seg2][seg3]...[seg118]
+A2: [music_full_length]
+```
+
+Build:
+
+```
+V1:  [scene_1_clip]
+A1:  [scene_1_narration]
+
+V2:  [scene_2_clip]
+A2:  [scene_2_narration]
+
+V3:  [scene_3_clip]
+A3:  [scene_3_narration]
+
+...
+
+V118: [scene_118_clip]
+A118: [scene_118_narration]
+
+MUSIC: [dedicated music bus track — full length, ducked by narration tracks]
+```
+
+Each scene is an isolated unit. Edit Scene 47 without touching Scene 46 or 48.
+
+-----
+
+## Why This Works in DaVinci Resolve
+
+- DaVinci supports unlimited video and audio tracks
+- Each track pair is independently editable
+- Fairlight Ducker can be applied at the bus level — music track ducked by the sum of all narration tracks (sidechain from a bus, not individual tracks)
+- Fusion effects, titles, Ken Burns — applied per-track, not globally
+- Render still outputs a single flat video — track architecture is editorial, not output
+
+-----
+
+## The 1M Token Model Integration
+
+**Use Kimi-K2 or Qwen3.5:397b for scene planning:**
+
+Feed the entire episode TTS segment JSON (all 118 segments for EP4) in one prompt. Ask it to return:
+
+```json
+{
+  "scenes": [
+    {
+      "scene_id": 1,
+      "video_track": 1,
+      "audio_track": 1,
+      "clip_file": "clip_0001_narrator.wav",
+      "visual_file": "ep4_seq_001.mp4",
+      "start_frame": 86400,
+      "duration_frames": 312,
+      "notes": ""
+    },
+    ...
+  ]
+}
+```
+
+The model holds the entire episode in context — it can flag timing conflicts, gaps, pacing issues, and segment overlaps before a single frame is rendered.
+
+This replaces the current sequential blind assembly with a fully planned scene map.
+
+-----
+
+## Implementation Notes for Builder Claude
+
+### Track creation in DaVinci API:
+
+```python
+# Add video track for each scene
+for i in range(num_scenes):
+    timeline.AddTrack("video")
+    timeline.AddTrack("audio", "stereo")
+
+# Place clip on specific track
+timeline.AppendToTimeline([{
+    "mediaPoolItem": clip,
+    "trackIndex": scene_id,  # scene-specific track
+    "recordFrame": start_frame,
+    "mediaType": 1  # video only
+}])
+
+# Place audio on matching track
+timeline.AppendToTimeline([{
+    "mediaPoolItem": audio_clip,
+    "trackIndex": scene_id,  # matching audio track
+    "recordFrame": start_frame,
+    "mediaType": 2  # audio only
+}])
+```
+
+### Music bus:
+
+- Add one dedicated music track above all scene tracks
+- Set to full episode length
+- Fairlight Ducker: source = narration bus, duck level = -18dB
+
+### Reusable track template:
+
+- Build EP3 with this structure first
+- Save the empty timeline as a DaVinci template project
+- EP4-6 import the template, populate with their own clips
+
+-----
+
+## Advantages Summary
+
+|Problem          |Old Approach                             |New Approach                     |
+|-----------------|-----------------------------------------|---------------------------------|
+|Sync drift       |Global — one fix breaks all downstream   |Local — each scene isolated      |
+|Editing          |Ripple edits cascade                     |Direct edit, no cascade          |
+|Fairlight ducking|One music track vs one narration track   |Music bus ducked by narration sum|
+|1M model use     |Can’t hold full episode in context       |Full episode JSON in one shot    |
+|Debugging        |Find which of 118 sequential clips is off|Go directly to Scene N’s track   |
+|Reusability      |Rebuild structure every episode          |Template — swap clips            |
+
+-----
+
+## Priority
+
+Implement in EP3 build script first. Review with Don. Then cascade to EP4-6.
+
+-----
+
+*Spec by Robin (App Claude) | 2026-03-12*
+*Push to playland repo so Strategos and Builder Claude can read it*
 </pre>
 
 <hr>
