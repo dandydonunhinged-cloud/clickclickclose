@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://clickclickclose.click/</loc><priority>1.0</priority></url>
-  <url><loc>https://clickclickclose.click/about.html</loc><priority>0.8</priority></url>
-  <url><loc>https://clickclickclose.click/calculator.html</loc><priority>0.9</priority></url>
-  <url><loc>https://clickclickclose.click/submit.html</loc><priority>0.9</priority></url>
-  <url><loc>https://clickclickclose.click/dscr.html</loc><priority>0.8</priority></url>
-  <url><loc>https://clickclickclose.click/fix-and-flip.html</loc><priority>0.8</priority></url>
-  <url><loc>https://clickclickclose.click/bridge.html</loc><priority>0.8</priority></url>
-  <url><loc>https://clickclickclose.click/construction.html</loc><priority>0.7</priority></url>
-  <url><loc>https://clickclickclose.click/str.html</loc><priority>0.8</priority></url>
-  <url><loc>https://clickclickclose.click/portfolio.html</loc><priority>0.7</priority></url>
-  <url><loc>https://clickclickclose.click/denied.html</loc><priority>0.9</priority></url>
+  <url><loc>https://clickclickclose.click/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/calculator.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/submit.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/dscr.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/fix-and-flip.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/bridge.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/construction.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/str.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/portfolio.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/denied.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/multifamily.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/cmbs.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/cre-bridge.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clickclickclose.click/cre-construction.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/sba.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/mezzanine.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clickclickclose.click/submit-commercial.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
 </urlset>
