@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your Commercial Deal | Click Click Close</title>
+  <meta name="description" content="Submit your commercial real estate deal. Get matched with the best CRE lender in 48 hours. No credit pull. Multifamily, office, retail, industrial, and more.">
+  <meta name="keywords" content="submit commercial deal, CRE loan application, commercial mortgage, multifamily loan, CMBS loan, commercial bridge loan, commercial real estate financing">
+  <link rel="canonical" href="https://clickclickclose.click/submit-commercial.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Submit Your Commercial Deal","description":"Submit your CRE deal and get matched with competing lenders in 48 hours. No credit pull, no obligation.","url":"https://clickclickclose.click/submit-commercial.html","isPartOf":{"@type":"WebSite","name":"Click Click Close","url":"https://clickclickclose.click"}}
+  </script>
+  <style>
+    /* Hero */
+    .submit-hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); padding: 7rem 0 3rem; position: relative; overflow: hidden; }
+    .submit-hero::before { content:''; position:absolute; top:-50%; right:-20%; width:80%; height:200%; background:radial-gradient(ellipse, rgba(212,168,67,0.05) 0%, transparent 70%); pointer-events:none; }
+    .submit-hero .container { position:relative; z-index:2; text-align:center; }
+    .submit-hero h1 { color:var(--white); margin-bottom:0.75rem; font-weight:800; }
+    .submit-hero h1 .highlight { color:var(--gold); }
+    .submit-hero p { color:rgba(255,255,255,0.7); font-size:1.1rem; max-width:600px; margin:0 auto; }
+
+    /* Trust bar */
+    .trust-bar { display:flex; justify-content:center; flex-wrap:wrap; gap:1.5rem; margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); }
+    .trust-item { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); font-size:0.9rem; font-weight:500; }
+    .trust-item .trust-icon { width:32px; height:32px; background:rgba(212,168,67,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+
+    /* Form layout */
+    .form-page-wrapper { background:var(--off-white); padding:3rem 0 5rem; }
+
+    /* Progress indicator */
+    .step-progress { display:flex; justify-content:center; gap:0; margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; }
+    .step-progress-item { flex:1; text-align:center; position:relative; }
+    .step-progress-item::before { content:''; position:absolute; top:18px; left:0; right:0; height:3px; background:var(--gray-200); z-index:0; }
+    .step-progress-item:first-child::before { left:50%; }
+    .step-progress-item:last-child::before { right:50%; }
+    .step-progress-num { width:36px; height:36px; border-radius:50%; background:var(--gray-200); color:var(--gray-600,#6b7280); display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:0.9rem; position:relative; z-index:1; transition:all 0.3s; }
+    .step-progress-item.active .step-progress-num { background:var(--gold); color:var(--navy); }
+    .step-progress-item.completed .step-progress-num { background:var(--navy); color:var(--white); }
+    .step-progress-item.completed::before,
+    .step-progress-item.active::before { background:var(--navy); }
+    .step-progress-label { display:block; font-size:0.75rem; color:var(--gray-600,#6b7280); margin-top:6px; font-weight:500; }
+    .step-progress-item.active .step-progress-label { color:var(--navy); font-weight:700; }
+
+    /* Form card */
+    .form-card { max-width:860px; margin:0 auto; background:var(--white); border-radius:12px; padding:2.5rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    .form-card h2 { color:var(--navy); margin-bottom:0.5rem; font-size:1.4rem; }
+    .form-card .step-desc { color:var(--gray-600,#6b7280); margin-bottom:1.5rem; font-size:0.95rem; }
+
+    /* Form elements */
+    .form-group { margin-bottom:1.25rem; }
+    .form-group label { display:block; font-weight:600; font-size:0.88rem; color:var(--navy); margin-bottom:0.4rem; }
+    .form-group .required { color:#dc2626; }
+    .form-control { width:100%; padding:0.7rem 0.9rem; border:1.5px solid var(--gray-200); border-radius:8px; font-size:0.95rem; font-family:inherit; transition:border-color 0.2s; background:var(--white); }
+    .form-control:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(212,168,67,0.15); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-hint { font-size:0.78rem; color:var(--gray-600,#6b7280); margin-top:0.3rem; }
+    .form-error { color:#dc2626; font-size:0.78rem; margin-top:0.3rem; display:none; }
+
+    /* Navigation buttons */
+    .form-nav { display:flex; justify-content:space-between; margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--gray-200); }
+    .btn-back { background:transparent; border:1.5px solid var(--gray-200); color:var(--navy); padding:0.7rem 1.5rem; border-radius:8px; font-weight:600; font-size:0.9rem; cursor:pointer; transition:all 0.2s; }
+    .btn-back:hover { border-color:var(--navy); background:var(--gray-100); }
+
+    /* Step visibility */
+    .form-step { display:none; }
+    .form-step.active { display:block; }
+
+    /* Disclaimer */
+    .form-disclaimer { max-width:860px; margin:2rem auto 0; padding:1.25rem 1.5rem; background:var(--white); border:1px solid var(--gray-200); border-radius:12px; font-size:0.82rem; color:var(--gray-600,#6b7280); line-height:1.7; text-align:center; }
+    .form-disclaimer strong { color:var(--navy); }
+
+    /* Success state */
+    @keyframes checkPop { 0% { transform:scale(0); opacity:0; } 50% { transform:scale(1.2); } 100% { transform:scale(1); opacity:1; } }
+    .success-check { width:80px; height:80px; background:var(--success,#16a34a); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:var(--white); margin:0 auto 1.5rem; animation:checkPop 0.5s ease forwards; }
+    .success-message { text-align:center; }
+    .success-message h2 { color:var(--navy); margin-bottom:0.5rem; }
+    .success-message p { color:var(--gray-600,#6b7280); max-width:500px; margin:0 auto 1.5rem; }
+
+    @media (max-width:768px) {
+      .submit-hero { padding:6rem 0 2rem; }
+      .form-card { padding:1.5rem; }
+      .form-row { grid-template-columns:1fr; }
+      .step-progress-label { font-size:0.65rem; }
+      .trust-bar { gap:1rem; }
+      .trust-item { font-size:0.8rem; }
+    }
+    @media (max-width:480px) {
+      .trust-bar { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header"><div class="container"><nav class="nav">
+    <a href="index.html" class="nav-logo"><div class="logo-icon">CCC</div>Click Click <span>Close</span></a>
+    <div class="nav-links">
+      <div class="dropdown"><a class="dropdown-toggle">Residential</a><div class="dropdown-menu">
+        <a href="dscr.html">DSCR / Rental Loans</a><a href="fix-and-flip.html">Fix &amp; Flip</a><a href="bridge.html">Bridge Loans</a><a href="construction.html">Construction</a><a href="str.html">Short-Term Rental</a><a href="portfolio.html">Portfolio / Blanket</a>
+      </div></div>
+      <div class="dropdown"><a class="dropdown-toggle">Commercial</a><div class="dropdown-menu">
+        <a href="commercial.html">CRE Overview</a><a href="multifamily.html">Multifamily / Apartment</a><a href="cmbs.html">CMBS Conduit</a><a href="sba.html">SBA 504 / 7(a)</a><a href="cre-bridge.html">CRE Bridge</a><a href="cre-construction.html">CRE Construction</a><a href="mezzanine.html">Mezzanine / Pref Equity</a>
+      </div></div>
+      <a href="about.html">About</a>
+      <a href="calculator.html">Deal Analyzer</a>
+      <a href="submit.html">Submit a Deal</a>
+    </div>
+    <div class="nav-cta"><a href="submit-commercial.html" class="btn btn-primary btn-sm">Submit CRE Deal</a></div>
+    <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav></div></header>
+
+  <!-- Hero -->
+  <section class="submit-hero">
+    <div class="container">
+      <h1>Submit Your Commercial <span class="highlight">Deal</span></h1>
+      <p>Tell us about your commercial property and financing needs. We'll match you with competing lenders in 48 hours. No obligation.</p>
+      <div class="trust-bar">
+        <div class="trust-item"><span class="trust-icon">&#128274;</span>No Credit Pull</div>
+        <div class="trust-item"><span class="trust-icon">&#9889;</span>48-Hour Response</div>
+        <div class="trust-item"><span class="trust-icon">&#127970;</span>All CRE Types</div>
+        <div class="trust-item"><span class="trust-icon">&#128202;</span>Competing Term Sheets</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="form-page-wrapper">
+    <div class="container">
+
+      <!-- Progress -->
+      <div class="step-progress" id="step-progress">
+        <div class="step-progress-item active" data-step="0">
+          <span class="step-progress-num">1</span>
+          <span class="step-progress-label">Property Info</span>
+        </div>
+        <div class="step-progress-item" data-step="1">
+          <span class="step-progress-num">2</span>
+          <span class="step-progress-label">Loan Request</span>
+        </div>
+        <div class="step-progress-item" data-step="2">
+          <span class="step-progress-num">3</span>
+          <span class="step-progress-label">Financials</span>
+        </div>
+        <div class="step-progress-item" data-step="3">
+          <span class="step-progress-num">4</span>
+          <span class="step-progress-label">Sponsor Info</span>
+        </div>
+      </div>
+
+      <form id="cre-form" class="form-card" action="#" method="POST" novalidate>
+
+        <!-- ======================== -->
+        <!-- STEP 1: PROPERTY INFO   -->
+        <!-- ======================== -->
+        <div class="form-step active" data-step="0">
+          <h2>Property Information</h2>
+          <p class="step-desc">Tell us about the property you're financing.</p>
+
+          <div class="form-group">
+            <label for="property-type">Property Type <span class="required">*</span></label>
+            <select id="property-type" name="propertyType" class="form-control" required>
+              <option value="">Select property type</option>
+              <option value="multifamily">Multifamily (5+ units)</option>
+              <option value="office">Office</option>
+              <option value="retail">Retail</option>
+              <option value="industrial">Industrial / Warehouse</option>
+              <option value="mixed-use">Mixed-Use</option>
+              <option value="self-storage">Self-Storage</option>
+              <option value="hospitality">Hospitality / Hotel</option>
+              <option value="land">Land</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="form-error">Please select a property type.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="property-address">Property Address <span class="required">*</span></label>
+            <input type="text" id="property-address" name="propertyAddress" class="form-control" placeholder="Full street address, city, state, ZIP" required>
+            <div class="form-error">Please enter the property address.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="units-sf">Number of Units / Square Footage <span class="required">*</span></label>
+              <input type="text" id="units-sf" name="unitsSf" class="form-control" placeholder="e.g., 48 units or 25,000 SF" required>
+              <div class="form-error">Please enter units or square footage.</div>
+            </div>
+            <div class="form-group">
+              <label for="year-built">Year Built</label>
+              <input type="text" id="year-built" name="yearBuilt" class="form-control" placeholder="e.g., 1998">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="current-occupancy">Current Occupancy</label>
+            <select id="current-occupancy" name="currentOccupancy" class="form-control">
+              <option value="">Select occupancy range</option>
+              <option value="95-100">95-100%</option>
+              <option value="90-94">90-94%</option>
+              <option value="85-89">85-89%</option>
+              <option value="80-84">80-84%</option>
+              <option value="70-79">70-79%</option>
+              <option value="below-70">Below 70%</option>
+              <option value="vacant">Vacant / Pre-Lease</option>
+              <option value="na">N/A (Land / Construction)</option>
+            </select>
+          </div>
+
+          <div class="form-nav">
+            <div></div>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Loan Request &#8594;</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- STEP 2: LOAN REQUEST    -->
+        <!-- ======================== -->
+        <div class="form-step" data-step="1">
+          <h2>Loan Request</h2>
+          <p class="step-desc">What type of financing are you looking for?</p>
+
+          <div class="form-group">
+            <label for="loan-purpose">Loan Purpose <span class="required">*</span></label>
+            <select id="loan-purpose" name="loanPurpose" class="form-control" required>
+              <option value="">Select loan purpose</option>
+              <option value="acquisition">Acquisition</option>
+              <option value="refinance">Refinance (Rate/Term)</option>
+              <option value="cash-out">Cash-Out Refinance</option>
+              <option value="construction">Construction / Development</option>
+              <option value="bridge">Bridge / Value-Add</option>
+            </select>
+            <div class="form-error">Please select a loan purpose.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="requested-amount">Requested Loan Amount <span class="required">*</span></label>
+              <input type="text" id="requested-amount" name="requestedAmount" class="form-control" placeholder="$5,000,000" required>
+              <div class="form-error">Please enter the requested loan amount.</div>
+            </div>
+            <div class="form-group">
+              <label for="estimated-value">Estimated Property Value <span class="required">*</span></label>
+              <input type="text" id="estimated-value" name="estimatedValue" class="form-control" placeholder="$7,500,000" required>
+              <div class="form-error">Please enter the estimated property value.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="desired-term">Desired Loan Term</label>
+              <select id="desired-term" name="desiredTerm" class="form-control">
+                <option value="">Select term</option>
+                <option value="12-months">12 months (bridge)</option>
+                <option value="24-months">24 months (bridge)</option>
+                <option value="36-months">36 months (bridge)</option>
+                <option value="3-year">3 years</option>
+                <option value="5-year">5 years</option>
+                <option value="7-year">7 years</option>
+                <option value="10-year">10 years</option>
+                <option value="15-year">15+ years</option>
+                <option value="flexible">Flexible / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="urgency">Timing / Urgency</label>
+              <select id="urgency" name="urgency" class="form-control">
+                <option value="">Select urgency</option>
+                <option value="immediate">Immediate (under contract)</option>
+                <option value="30-days">Within 30 days</option>
+                <option value="60-days">Within 60 days</option>
+                <option value="90-days">Within 90 days</option>
+                <option value="exploring">Just exploring options</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="prevStep()">&#8592; Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Financials &#8594;</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- STEP 3: FINANCIALS      -->
+        <!-- ======================== -->
+        <div class="form-step" data-step="2">
+          <h2>Property Financials</h2>
+          <p class="step-desc">Help us understand the property's income performance. Estimates are fine at this stage.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="current-noi">Current NOI (or Projected) <span class="required">*</span></label>
+              <input type="text" id="current-noi" name="currentNoi" class="form-control" placeholder="$450,000" required>
+              <div class="form-hint">Net Operating Income = Revenue minus Operating Expenses</div>
+              <div class="form-error">Please enter the NOI.</div>
+            </div>
+            <div class="form-group">
+              <label for="annual-revenue">Annual Gross Revenue</label>
+              <input type="text" id="annual-revenue" name="annualRevenue" class="form-control" placeholder="$750,000">
+              <div class="form-hint">Total rental income + other income</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="annual-expenses">Annual Operating Expenses</label>
+              <input type="text" id="annual-expenses" name="annualExpenses" class="form-control" placeholder="$300,000">
+              <div class="form-hint">Taxes, insurance, maintenance, management, etc.</div>
+            </div>
+            <div class="form-group">
+              <label for="asking-price">Asking Price (if Acquisition)</label>
+              <input type="text" id="asking-price" name="askingPrice" class="form-control" placeholder="$7,200,000">
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="prevStep()">&#8592; Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Sponsor Info &#8594;</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- STEP 4: SPONSOR INFO    -->
+        <!-- ======================== -->
+        <div class="form-step" data-step="3">
+          <h2>Sponsor Information</h2>
+          <p class="step-desc">Tell us about yourself and your experience. This helps us match you with the right lending programs.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sponsor-name">Full Name <span class="required">*</span></label>
+              <input type="text" id="sponsor-name" name="sponsorName" class="form-control" placeholder="John Smith" required>
+              <div class="form-error">Please enter your name.</div>
+            </div>
+            <div class="form-group">
+              <label for="entity-name">Entity Name</label>
+              <input type="text" id="entity-name" name="entityName" class="form-control" placeholder="Smith Capital Partners LLC">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sponsor-email">Email <span class="required">*</span></label>
+              <input type="email" id="sponsor-email" name="sponsorEmail" class="form-control" placeholder="john@smithcapital.com" required>
+              <div class="form-error">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group">
+              <label for="sponsor-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="sponsor-phone" name="sponsorPhone" class="form-control" placeholder="(214) 555-0199" required>
+              <div class="form-error">Please enter your phone number.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cre-experience">Years of CRE Experience <span class="required">*</span></label>
+              <select id="cre-experience" name="creExperience" class="form-control" required>
+                <option value="">Select experience</option>
+                <option value="0-1">0-1 years (first deal)</option>
+                <option value="1-3">1-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5-10">5-10 years</option>
+                <option value="10-20">10-20 years</option>
+                <option value="20+">20+ years</option>
+              </select>
+              <div class="form-error">Please select your experience level.</div>
+            </div>
+            <div class="form-group">
+              <label for="properties-owned">Number of Properties Owned</label>
+              <select id="properties-owned" name="propertiesOwned" class="form-control">
+                <option value="">Select range</option>
+                <option value="0">0 (first acquisition)</option>
+                <option value="1-3">1-3</option>
+                <option value="4-10">4-10</option>
+                <option value="11-25">11-25</option>
+                <option value="25-50">25-50</option>
+                <option value="50+">50+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="total-portfolio">Total Portfolio Value</label>
+              <select id="total-portfolio" name="totalPortfolio" class="form-control">
+                <option value="">Select range</option>
+                <option value="under-1m">Under $1M</option>
+                <option value="1-5m">$1M - $5M</option>
+                <option value="5-10m">$5M - $10M</option>
+                <option value="10-25m">$10M - $25M</option>
+                <option value="25-50m">$25M - $50M</option>
+                <option value="50-100m">$50M - $100M</option>
+                <option value="100m+">$100M+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="net-worth">Net Worth Range</label>
+              <select id="net-worth" name="netWorth" class="form-control">
+                <option value="">Select range</option>
+                <option value="under-500k">Under $500K</option>
+                <option value="500k-1m">$500K - $1M</option>
+                <option value="1-3m">$1M - $3M</option>
+                <option value="3-5m">$3M - $5M</option>
+                <option value="5-10m">$5M - $10M</option>
+                <option value="10-25m">$10M - $25M</option>
+                <option value="25m+">$25M+</option>
+                <option value="prefer-not">Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="liquidity">Liquidity Range</label>
+            <select id="liquidity" name="liquidity" class="form-control">
+              <option value="">Select range</option>
+              <option value="under-100k">Under $100K</option>
+              <option value="100-250k">$100K - $250K</option>
+              <option value="250-500k">$250K - $500K</option>
+              <option value="500k-1m">$500K - $1M</option>
+              <option value="1-3m">$1M - $3M</option>
+              <option value="3-5m">$3M - $5M</option>
+              <option value="5m+">$5M+</option>
+              <option value="prefer-not">Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-back" onclick="prevStep()">&#8592; Back</button>
+            <button type="submit" class="btn btn-primary btn-lg">Submit My CRE Deal &#8594;</button>
+          </div>
+        </div>
+
+        <!-- ======================== -->
+        <!-- SUCCESS STATE           -->
+        <!-- ======================== -->
+        <div class="form-step" data-step="4">
+          <div class="success-message">
+            <div class="success-check">&#10003;</div>
+            <h2>Deal Submitted Successfully</h2>
+            <p>We've received your commercial deal submission. Our CRE team will review your scenario and deliver competing term sheets within 48 hours.</p>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Disclaimer -->
+      <div class="form-disclaimer">
+        <strong>No credit pull at this stage.</strong> Submitting this form is an inquiry only &mdash; not a loan application. We'll review your deal scenario and reach out to discuss options before any formal application or credit check. Your information is kept confidential and used solely to match your deal with appropriate lending programs.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom:1rem;"><div class="logo-icon">CCC</div>Click Click <span>Close</span></a>
+          <p>Investment property and commercial real estate financing. Residential to commercial, one platform.</p>
+          <div class="nmls-badge">NMLS #000000 (Placeholder)</div>
+        </div>
+        <div>
+          <h4>Residential</h4>
+          <ul>
+            <li><a href="dscr.html">DSCR Loans</a></li>
+            <li><a href="fix-and-flip.html">Fix &amp; Flip</a></li>
+            <li><a href="bridge.html">Bridge Loans</a></li>
+            <li><a href="construction.html">Construction</a></li>
+            <li><a href="str.html">Short-Term Rental</a></li>
+            <li><a href="portfolio.html">Portfolio Loans</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Commercial</h4>
+          <ul>
+            <li><a href="multifamily.html">Multifamily</a></li>
+            <li><a href="cmbs.html">CMBS / Conduit</a></li>
+            <li><a href="sba.html">SBA 504 / 7(a)</a></li>
+            <li><a href="cre-bridge.html">CRE Bridge</a></li>
+            <li><a href="cre-construction.html">CRE Construction</a></li>
+            <li><a href="mezzanine.html">Mezzanine</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Phone: (888) 555-0199</li>
+            <li>Email: deals@clickclickclose.click</li>
+            <li>Hours: M-F 8am-6pm CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Click Click Close. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Equal Housing Lender</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Multi-step form logic
+    let currentStep = 0;
+    const totalSteps = 4;
+
+    function showStep(step) {
+      document.querySelectorAll('#cre-form .form-step').forEach(s => s.classList.remove('active'));
+      document.querySelector(`#cre-form .form-step[data-step="${step}"]`).classList.add('active');
+
+      document.querySelectorAll('.step-progress-item').forEach((item, i) => {
+        item.classList.remove('active', 'completed');
+        if (i < step) item.classList.add('completed');
+        if (i === step) item.classList.add('active');
+      });
+
+      window.scrollTo({ top: document.querySelector('.form-page-wrapper').offsetTop - 80, behavior: 'smooth' });
+    }
+
+    function nextStep() {
+      // Basic validation for current step
+      const currentFormStep = document.querySelector(`#cre-form .form-step[data-step="${currentStep}"]`);
+      const requiredFields = currentFormStep.querySelectorAll('[required]');
+      let valid = true;
+
+      requiredFields.forEach(field => {
+        const errorEl = field.parentElement.querySelector('.form-error');
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = '#dc2626';
+          if (errorEl) errorEl.style.display = 'block';
+        } else {
+          field.style.borderColor = '';
+          if (errorEl) errorEl.style.display = 'none';
+        }
+      });
+
+      if (!valid) return;
+
+      if (currentStep < totalSteps - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }
+
+    // Form submission
+    document.getElementById('cre-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate step 4
+      const currentFormStep = document.querySelector(`#cre-form .form-step[data-step="${currentStep}"]`);
+      const requiredFields = currentFormStep.querySelectorAll('[required]');
+      let valid = true;
+
+      requiredFields.forEach(field => {
+        const errorEl = field.parentElement.querySelector('.form-error');
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = '#dc2626';
+          if (errorEl) errorEl.style.display = 'block';
+        } else {
+          field.style.borderColor = '';
+          if (errorEl) errorEl.style.display = 'none';
+        }
+      });
+
+      // Email validation
+      const emailField = document.getElementById('sponsor-email');
+      if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+        valid = false;
+        emailField.style.borderColor = '#dc2626';
+        const errorEl = emailField.parentElement.querySelector('.form-error');
+        if (errorEl) errorEl.style.display = 'block';
+      }
+
+      if (!valid) return;
+
+      // Show success
+      currentStep = 4;
+      showStep(4);
+
+      // Mark all progress steps as completed
+      document.querySelectorAll('.step-progress-item').forEach(item => {
+        item.classList.remove('active');
+        item.classList.add('completed');
+      });
+    });
+
+    // Clear error styling on input
+    document.querySelectorAll('#cre-form .form-control').forEach(field => {
+      field.addEventListener('input', function() {
+        this.style.borderColor = '';
+        const errorEl = this.parentElement.querySelector('.form-error');
+        if (errorEl) errorEl.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
