@@ -142,22 +142,45 @@ document.addEventListener('DOMContentLoaded', () => {
       if (f.type === 'radio' || f.type === 'checkbox') { if(f.checked) data[f.name] = f.value; }
       else data[f.name] = f.value;
     });
-    // Save locally
-    const subs = JSON.parse(localStorage.getItem('ccc_deals') || '[]');
-    subs.push(data);
-    localStorage.setItem('ccc_deals', JSON.stringify(subs));
+    // Client-side rate limit check
+    if (typeof CCC_SECURE !== 'undefined' && !CCC_SECURE.checkRate()) {
+      alert('Too many submissions. Please try again later.');
+      return;
+    }
 
-    // Submit to API
+    // Save non-PII locally (secure store strips name/email/phone/notes)
+    if (typeof CCC_SECURE !== 'undefined') {
+      CCC_SECURE.secureStore('ccc_last_deal', data);
+    }
+
+    // Encrypt sensitive fields + add CSRF before sending
     const API = location.hostname === 'localhost'
       ? 'http://localhost:8081/api/submit-deal'
       : 'https://ccc-investor-api.onrender.com/api/submit-deal';
     const btn = F.querySelector('.btn-submit');
     if (btn) { btn.disabled = true; btn.textContent = 'Analyzing your deal...'; }
 
-    fetch(API, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
-      .then(r => r.json())
-      .then(res => { showResult(res.report || null); })
-      .catch(() => { showResult(null); });
+    const sendData = typeof CCC_SECURE !== 'undefined'
+      ? CCC_SECURE.encryptPayload(data)
+      : Promise.resolve(data);
+
+    Promise.resolve(sendData).then(payload => {
+      return fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        credentials: 'same-origin'
+      });
+    })
+    .then(r => {
+      if (r.status === 429) { alert('Too many requests. Please try again later.'); throw new Error('rate limited'); }
+      return r.json();
+    })
+    .then(res => { showResult(res.report || null); })
+    .catch(err => {
+      if (err.message !== 'rate limited') showResult(null);
+      else { if(btn) { btn.disabled = false; btn.textContent = 'Analyze My Deal →'; } }
+    });
   });
 
   function showResult(report) {
@@ -167,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="success-icon">✓</div>
         <h2>Your Deal Analysis</h2>
         <div class="report-box">${report}</div>
-        <p>A loan specialist will reach out within <strong style="color:var(--gold)">15 minutes</strong> during business hours.</p>
+        <p>Your deal has been matched against 32+ lending programs. Review your options above.</p>
         <a href="index.html" class="btn-next" style="margin-right:0.5rem">Home</a>
         <a href="apply.html" class="btn-back">Submit Another</a>
       </div>`;
@@ -175,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `<div class="success">
         <div class="success-icon">✓</div>
         <h2>Deal Submitted</h2>
-        <p>We've received your deal. A loan specialist will review it and reach out within <strong style="color:var(--gold)">15 minutes</strong> during business hours.</p>
+        <p>Your deal is being matched against 32+ lending programs. Results are being prepared.</p>
         <a href="index.html" class="btn-next" style="margin-right:0.5rem">Home</a>
         <a href="apply.html" class="btn-back">Submit Another</a>
       </div>`;

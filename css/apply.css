@@ -108,6 +108,10 @@
 .disclaimer { max-width:860px; margin:2rem auto 0; padding:1.25rem 1.5rem; background:var(--white); border:1px solid var(--gray-200); border-radius:12px; font-size:0.82rem; color:var(--gray-500); line-height:1.7; text-align:center; }
 .disclaimer strong { color:var(--navy); }
 
+/* Footer */
+.site-footer { background:var(--navy); color:rgba(255,255,255,0.5); padding:2rem 0; text-align:center; font-size:0.85rem; }
+.site-footer a { color:var(--gold); }
+
 /* Responsive */
 @media (max-width:768px) {
   .apply-hero { padding:6rem 0 2rem; }

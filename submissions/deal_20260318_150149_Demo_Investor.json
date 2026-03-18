@@ -1,0 +1,212 @@
+{
+  "submitted_at": "2026-03-18T15:01:49.519163",
+  "form_data": {
+    "loanType": "dscr",
+    "propertyType": "sfr",
+    "propertyState": "TX",
+    "purchasePrice": "$350,000",
+    "rentalIncome": "$2,800",
+    "downPayment": "25",
+    "creditScore": "720-739",
+    "experience": "2-5",
+    "entityType": "llc",
+    "closeTimeline": "30-days",
+    "fullName": "Demo Investor",
+    "email": "demo@test.com",
+    "phone": "(214) 555-1234",
+    "bestTimeToCall": "morning",
+    "referralSource": "google",
+    "businessPurpose": true,
+    "tcpaConsent": true
+  },
+  "client_report": {
+    "deal_type": "dscr",
+    "summary": "Found 5 lenders for your dscr deal.",
+    "matches": [
+      {
+        "rank": 1,
+        "program_type": "Dscr",
+        "estimated_rate": "6.25% - 7.0%",
+        "estimated_close": "7-14 days",
+        "fit_reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "notes": [
+          "Clean match — no issues found."
+        ]
+      },
+      {
+        "rank": 2,
+        "program_type": "Dscr",
+        "estimated_rate": "6.25% - 7.0%",
+        "estimated_close": "7-14 days",
+        "fit_reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "notes": [
+          "Clean match — no issues found."
+        ]
+      },
+      {
+        "rank": 3,
+        "program_type": "Dscr",
+        "estimated_rate": "6.25% - 7.0%",
+        "estimated_close": "7-14 days",
+        "fit_reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "notes": [
+          "Clean match — no issues found."
+        ]
+      },
+      {
+        "rank": 4,
+        "program_type": "Dscr",
+        "estimated_rate": "6.25% - 7.0%",
+        "estimated_close": "7-14 days",
+        "fit_reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "notes": [
+          "Clean match — no issues found."
+        ]
+      },
+      {
+        "rank": 5,
+        "program_type": "Dscr",
+        "estimated_rate": "6.25% - 7.0%",
+        "estimated_close": "7-14 days",
+        "fit_reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "notes": [
+          "Clean match — no issues found."
+        ]
+      }
+    ],
+    "next_steps": [
+      "We're reviewing your deal now.",
+      "You'll hear from us within 15 minutes during business hours.",
+      "We'll present 2-3 options with exact terms and rates.",
+      "No commitment. No credit pull until you say go."
+    ],
+    "disclaimer": "This is not a loan approval or commitment to lend. Rate estimates are based on current market conditions and your stated scenario. Actual terms depend on full documentation review."
+  },
+  "admin_report": {
+    "borrower": {
+      "name": "Demo Investor",
+      "email": "demo@test.com",
+      "phone": "(214) 555-1234",
+      "best_time": "morning",
+      "referral": "google"
+    },
+    "deal": {
+      "type": "dscr",
+      "property_type": "sfr",
+      "state": "TX",
+      "credit": 730,
+      "loan_amount": "$262,500",
+      "ltv": "75%",
+      "dscr": "1.19x",
+      "purchase_price": "$350,000",
+      "rental_income": "$2,800/mo",
+      "rehab_budget": "N/A",
+      "arv": "N/A",
+      "close_timeline": "30-days",
+      "experience": "2-5",
+      "entity": "llc"
+    },
+    "lender_matches": [
+      {
+        "rank": 1,
+        "LENDER": "RCN Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP+referral+correspondent",
+        "comp_range": "1-2.5%",
+        "signup_url": "https://rcncapital.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Fastest close in non-QM. 5-day fix-flip. Correspondent program available."
+      },
+      {
+        "rank": 2,
+        "LENDER": "Lima One Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "affiliate",
+        "comp_range": "referral fee",
+        "signup_url": "https://www.limaone.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Fix2Rent and Build2Rent programs. Up to 9-unit. Construction-to-perm."
+      },
+      {
+        "rank": 3,
+        "LENDER": "A&D Mortgage",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP",
+        "comp_range": "1-2%",
+        "signup_url": "https://www.admortgage.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "24-hour UW turnaround. First non-QM AUS. ITIN program. Up to $5M+ DSCR."
+      },
+      {
+        "rank": 4,
+        "LENDER": "Kiavi",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "referral",
+        "comp_range": "referral fee",
+        "signup_url": "https://www.kiavi.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Tech-forward. Fastest fix-flip close. Pre-approval in minutes."
+      },
+      {
+        "rank": 5,
+        "LENDER": "Easy Street Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "broker",
+        "comp_range": "1-2%",
+        "signup_url": "https://www.easystreetcap.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Texas-based. Investor focus. 640 minimum (lowest DSCR floor)."
+      }
+    ],
+    "action_items": [
+      "Call Demo Investor at (214) 555-1234 (morning)",
+      "Best lender: RCN Capital",
+      "Estimated comp: 1-2.5% on $262,500"
+    ]
+  }
+}
