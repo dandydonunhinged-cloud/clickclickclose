@@ -378,14 +378,63 @@ document.addEventListener('DOMContentLoaded', () => {
       formData.files[cat] = uploadedFiles[cat].map(f => ({ name: f.name, size: f.size, type: f.type }));
     });
 
-    // Store in localStorage
+    // Store locally as backup
     const submissions = JSON.parse(localStorage.getItem('deal_submissions') || '[]');
     submissions.push(formData);
     localStorage.setItem('deal_submissions', JSON.stringify(submissions));
 
-    // Show success
-    showSuccess();
+    // Submit to API
+    const API_URL = window.location.hostname === 'localhost'
+      ? 'http://localhost:8081/api/submit-deal'
+      : 'https://ccc-investor-api.onrender.com/api/submit-deal';
+
+    const submitBtn = form.querySelector('[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Analyzing your deal...';
+    }
+
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.report) {
+        showSuccessWithReport(data.report);
+      } else {
+        showSuccess();
+      }
+    })
+    .catch(err => {
+      console.error('API error:', err);
+      // Fallback — still show success since we saved locally
+      showSuccess();
+    });
   });
+
+  function showSuccessWithReport(report) {
+    const body = form.querySelector('.form-body');
+    body.innerHTML = `
+      <div style="text-align: center; padding: 3rem 1rem;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">&#10003;</div>
+        <h2 style="margin-bottom: 1rem; color: #1a2332;">Your Deal Analysis</h2>
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 2rem; max-width: 700px; margin: 0 auto 2rem; text-align: left; white-space: pre-wrap; font-size: 0.95rem; line-height: 1.7; color: #374151;">
+          ${report}
+        </div>
+        <p style="color: #6b7280; font-size: 0.9rem; max-width: 500px; margin: 0 auto 2rem;">
+          A loan specialist will reach out within <strong style="color: #d4a843;">15 minutes</strong> during business hours to discuss your options and next steps.
+        </p>
+        <a href="index.html" class="btn btn-primary" style="margin-right: 0.5rem;">Back to Home</a>
+        <a href="submit.html" class="btn btn-outline">Submit Another Deal</a>
+      </div>
+    `;
+    const progressBar = document.querySelector('.form-progress');
+    if (progressBar) {
+      progressBar.querySelectorAll('.form-progress-step').forEach(s => s.classList.add('completed'));
+    }
+  }
 
   function showSuccess() {
     const body = form.querySelector('.form-body');
