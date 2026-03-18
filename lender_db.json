@@ -20,8 +20,15 @@
       "summary": "Residential Capital Partners launches a new wholesale lending platform.",
       "products": [],
       "status": "needs_review"
+    },
+    "Open Mortgage": {
+      "discovered": "2026-03-18",
+      "source": "https://www.openwholesale.com/",
+      "summary": "Open Mortgage - Wholesale introduces itself as a new lender with innovative loan products for underserved communities.",
+      "products": [],
+      "status": "needs_review"
     }
   },
-  "last_updated": "2026-03-18T17:02:59.760522",
+  "last_updated": "2026-03-18T17:07:04.220415",
   "update_log": []
 }

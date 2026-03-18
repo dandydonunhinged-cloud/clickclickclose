@@ -1,0 +1,174 @@
+{
+  "request_id": "CCC-20260318174501",
+  "submitted_at": "2026-03-18T17:45:01.671643",
+  "form_data": {
+    "loanType": "dscr",
+    "propertyType": "sfr",
+    "propertyState": "TX",
+    "purchasePrice": "$350,000",
+    "rentalIncome": "$2,800",
+    "downPayment": "25",
+    "creditScore": "720-739",
+    "experience": "2-5",
+    "entityType": "llc",
+    "closeTimeline": "30-days",
+    "fullName": "Test Investor",
+    "email": "test@ccc.com",
+    "phone": "(214) 555-0001",
+    "bestTimeToCall": "morning"
+  },
+  "client_result": {
+    "request_id": "CCC-20260318174501",
+    "timestamp": "2026-03-18T17:45:01.671270",
+    "decision": "QUALIFIED",
+    "decision_message": "Qualified. 5 program(s) matched. Best rate: 6.25% - 7.0%.",
+    "confidence_pct": 90,
+    "programs_found": 5,
+    "conditional_flags": [],
+    "rate_range": "6.25% - 7.0%",
+    "close_estimate": "7-14 days",
+    "next_steps": [
+      "You're matched \u2014 we're preparing your program options now.",
+      "You'll hear from us within 15 minutes during business hours (M-F 8am-6pm CT).",
+      "We'll present 2-3 options with exact rates, terms, and close timelines.",
+      "No commitment. No credit pull. No BS."
+    ],
+    "disclaimer": "This is not a loan approval or commitment to lend. Rate estimates reflect current market conditions. Actual terms depend on full documentation review and lender approval."
+  },
+  "admin_result": {
+    "request_id": "CCC-20260318174501",
+    "timestamp": "2026-03-18T17:45:01.671270",
+    "decision": {
+      "decision": "QUALIFIED",
+      "decision_message": "Qualified. 5 program(s) matched. Best rate: 6.25% - 7.0%.",
+      "confidence_pct": 90,
+      "programs_found": 5,
+      "hard_stops": [],
+      "conditional_flags": [],
+      "best_match": {
+        "rate_range": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ]
+      },
+      "all_matches_count": 5
+    },
+    "borrower": {
+      "name": "Test Investor",
+      "email": "test@ccc.com",
+      "phone": "(214) 555-0001",
+      "best_time": "morning",
+      "referral": ""
+    },
+    "deal_summary": {
+      "type": "dscr",
+      "property_type": "sfr",
+      "state": "TX",
+      "credit_score": 730,
+      "loan_amount": 262500.0,
+      "ltv_pct": 75.0,
+      "dscr": 1.19,
+      "purchase_price": 350000.0,
+      "rental_income": 2800.0,
+      "close_timeline": "30-days",
+      "experience": "2-5",
+      "entity": "llc"
+    },
+    "lender_matches": [
+      {
+        "rank": 1,
+        "lender_name": "RCN Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP+referral+correspondent",
+        "comp_range": "1-2.5%",
+        "est_comp_dollars": "~$4,594",
+        "signup_url": "https://rcncapital.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Fastest close in non-QM. 5-day fix-flip. Correspondent program available."
+      },
+      {
+        "rank": 2,
+        "lender_name": "Lima One Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "affiliate",
+        "comp_range": "referral fee",
+        "est_comp_dollars": "See lender",
+        "signup_url": "https://www.limaone.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Fix2Rent and Build2Rent programs. Up to 9-unit. Construction-to-perm."
+      },
+      {
+        "rank": 3,
+        "lender_name": "A&D Mortgage",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "~$3,938",
+        "signup_url": "https://www.admortgage.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "24-hour UW turnaround. First non-QM AUS. ITIN program. Up to $5M+ DSCR."
+      },
+      {
+        "rank": 4,
+        "lender_name": "Kiavi",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "referral",
+        "comp_range": "referral fee",
+        "est_comp_dollars": "See lender",
+        "signup_url": "https://www.kiavi.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Tech-forward. Fastest fix-flip close. Pre-approval in minutes."
+      },
+      {
+        "rank": 5,
+        "lender_name": "Easy Street Capital",
+        "fit_score": 90,
+        "rate_estimate": "6.25% - 7.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "broker",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "~$3,938",
+        "signup_url": "https://www.easystreetcap.com/",
+        "reasons": [
+          "Handles dscr",
+          "Fast close capability"
+        ],
+        "warnings": [],
+        "notes": "Texas-based. Investor focus. 640 minimum (lowest DSCR floor)."
+      }
+    ],
+    "action_items": [
+      "CALL: Test Investor at (214) 555-0001 (morning)",
+      "EMAIL: test@ccc.com",
+      "BEST LENDER: RCN Capital \u2014 6.25% - 7.0% \u2014 comp 1-2.5%",
+      "EST COMP: ~$4,594",
+      "SIGNUP: https://rcncapital.com/"
+    ]
+  }
+}

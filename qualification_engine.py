@@ -553,4 +553,4 @@ if __name__ == "__main__":
 
         print(f"\n  ACTION ITEMS:")
         for item in a["action_items"]:
-            print(f"    → {item}")
+            print(f"    > {item}")

@@ -6,32 +6,16 @@
   "findings": [
     {
       "category": "rate_update",
-      "source": "https://duckduckgo.com/y.js?ad_domain=consumervoice.org&amp;ad_provider=bingv7aa&amp;ad_type=txad&amp;click_metadata=StPv90MbRYz1i%2DqiY9hme9mGkZO3FUWU6BFBkykM5dm95pssOfCQwnKIfx_4Qwg7VC438vxK4gso9dCxoQhsidwikzyHeYtqTGYFpL8SlHbV7hjjyF04P5T%2DVVKzP3vpW9JgLo0HdOV35NEOGjxvMgs7HSY%2Dfg2NlYl7ZeaZVVw.IAG6kIgJJlRHGh9_OuvC_A&amp;rut=91342ae3f933f5c7d8f2da594925f83f925e9b58ab47a2cb62d270bb91c08231&amp;u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De8XYXYABw9KZg2qIh8D58SRDVUCUxQOaQZq6RNKs2BInmfocParKzt63K7HyOcuAtD_GzXAtDMaAK187ngr8VWjqsPZvLkhiUPZvYz108B6YJtfo4fpjA%2DS9OJrYVw9ssaNIdKbXS_dHVm26axHy_q2jHYHcej5srA_V_D3YlI8CaofzEfq0cvINlmc0bmyiyRgZ%2D1Fs4swQbGCwrx5IzY_y0qhHU%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cuY29uc3VtZXJ2b2ljZS5vcmclMmZ0b3AtbW9ydGdhZ2UtbG9hbnMlM2ZnY2xpZCUzZCUyNmt3JTNkbW9ydGdhZ2UlMjUyMGxlbmRlciUyNmNwbiUzZDYwMjkzMjQzOSUyNmFkZ3JvdXAlM2QxMzMyNjA5ODI2NDE4MjU4JTI2bG9jX3BoeXNpY2FsJTNkNzQzOTYlMjZsb2NfaW50ZXJlc3QlM2QlMjZtYXRjaHR5cGUlM2RwJTI2bmV0d29yayUzZHMlMjZkZXZpY2UlM2RjJTI2Y3JlYXRpdmUlM2QlMjZwbGFjZW1lbnQlM2QlMjZ0YXJnZXQlM2QlMjZhZHBvcyUzZCUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2bXNjbGtpZCUzZGRmMzg1MjMwNTY4YTFkMzk2MmNiM2I4YjQ5ZWQ1NDRi%26rlid%3Ddf385230568a1d3962cb3b8b49ed544b&amp;vqd=4-40553004531591934859576640515777169163&amp;iurl=%7B1%7DIG%3D5E0B8615B09F4C45B9458B404A279EB5%26CID%3D1941C51D09C26E481608D23D08066F5A%26ID%3DDevEx%2C5050.1",
+      "source": "https://duckduckgo.com/y.js?ad_domain=consumervoice.org&amp;ad_provider=bingv7aa&amp;ad_type=txad&amp;click_metadata=Bd8r4qYmVTzRn7qLkhs%2Der_7HL2zFvkF8tQlkHqfzw5mlA8avFQtxXfRwIeajwZudmjK4YG%2D%2Dh08oksvOsu1qSZ3wXxHnGHjP6RPu1p1gmiXFsr5_ElwudLgRwul_%2DKpTlFNh9qvucfg63c_p3oTnIjWmk2dg4H0GWq5ZLtkxYs.VC3pNfu8Fitc9F8oYeYIeA&amp;rut=7d76b85ff80881e03f47bc3c07733ac84a6ed1177e9d55810c952c4aae87ad0e&amp;u3=https%3A%2F%2Fwww.bing.com%2Faclick%3Fld%3De8ra4eccRXhB9YTc8S2j7zXzVUCUy8shxJFgHjwGq_Dq2Psos6AurEEl9qIlIFcOjS3SOdTYe8HDgO1EVn7qWfU02jlUFvRxNpAsm_dC4Xi6%2DBqTLDd3tHDb_3BXT2nvNUrQmb1jXt6UsmiYqOo7MdqEj4_RR_rnefDMaCL309Ff4_1aXnVbu9MCdDPmjep7kuWWVKAC6Z5Oba0SNCZkJb0kdv1zo%26u%3DaHR0cHMlM2ElMmYlMmZ3d3cuY29uc3VtZXJ2b2ljZS5vcmclMmZ0b3AtbW9ydGdhZ2UtbG9hbnMlM2ZnY2xpZCUzZCUyNmt3JTNkYmVzdCUyNTIwbGVuZGVycyUyNTIwbW9ydGdhZ2UlMjZjcG4lM2Q2MDI5MzI0MzklMjZhZGdyb3VwJTNkMTMzMjYwOTgyNjQxODI1OCUyNmxvY19waHlzaWNhbCUzZDc0NTE1JTI2bG9jX2ludGVyZXN0JTNkJTI2bWF0Y2h0eXBlJTNkcCUyNm5ldHdvcmslM2RzJTI2ZGV2aWNlJTNkYyUyNmNyZWF0aXZlJTNkJTI2cGxhY2VtZW50JTNkJTI2dGFyZ2V0JTNkJTI2YWRwb3MlM2QlMjZ1dG1fc291cmNlJTNkYmluZyUyNm1zY2xraWQlM2Q0MjEyZjY3NTgwMWUxZWU1Y2E0YzlmY2VhMGI2YzNlYQ%26rlid%3D4212f675801e1ee5ca4c9fcea0b6c3ea&amp;vqd=4-230110292977904355602534829341677935500&amp;iurl=%7B1%7DIG%3D58FB01AE341A46F0B56D8592FBAA9E57%26CID%3D1BAECCE544376283158BDBC545F36389%26ID%3DDevEx%2C5045.1",
       "title": "Top 5 Mortgage Lenders (2026) - 5 Best Mortgage Lenders",
-      "summary": "Today's 30 Year fixed purchase rate is 6.17% APR with a +0.07% increase in the last day and a +0.12% increase over the past 90 days.",
+      "summary": "Today's 30 Year fixed purchase rate is 6.17% APR with a +0.07% increase in the last day and +0.12% over the past 90 days.",
       "impact": "medium",
-      "action_needed": "Mortgage brokers should review their pricing strategies to ensure competitiveness given recent rate updates.",
+      "action_needed": "Mortgage brokers should review their current pricing strategies to ensure competitiveness given the recent rate changes.",
       "raw_snippet": "",
       "structured_data": {
         "current_rate": "6.17%",
         "change_1_day": "+0.07%",
         "change_90_days": "+0.12%"
-      }
-    },
-    {
-      "category": "new_lender",
-      "source": "https://media.loandepot.com/news-releases/press-release-details/2026/loanDepot-Expands-Market-Presence-With-New-Wholesale-Lending-Channel/default.aspx",
-      "title": "loanDepot Expands Market Presence With New Wholesale Lending Channel",
-      "summary": "loanDepot has launched a new wholesale lending channel designed for brokers with competitive pricing and high-touch support.",
-      "impact": "high",
-      "action_needed": "Mortgage brokers should consider contacting loanDepot to explore partnership opportunities that offer both digital convenience and direct support.",
-      "raw_snippet": "",
-      "structured_data": {
-        "company_name": "loanDepot, Inc.",
-        "launch_date": "03/09/2026",
-        "channel_leader": "Dan Peña",
-        "contact_person": "Matt Mancasola",
-        "email_contact": "[email&#160;protected]"
       }
     },
     {
@@ -48,21 +32,24 @@
         "target_market": "investor-focused brokers working with fix-and-flip investors and rental property owners",
         "location": "Dallas, TX",
         "contact_person": "Paul Jackson",
-        "position": "President & CEO",
+        "title_contact_person": "President & CEO",
         "phone_number": "214.317.9662",
         "email_address": "paul.jackson@rescappartners.com"
       }
     },
     {
       "category": "new_lender",
-      "source": "https://www.onenewspage.com/n/Press+Releases/1ztelp4iy8/Residential-Capital-Partners-Launches-Wholesale-Lending-Platform-for.htm",
-      "title": "Residential Capital Partners Launches Wholesale - One News Page",
-      "summary": "Residential Capital Partners launches a new wholesale lending platform.",
+      "source": "https://www.openwholesale.com/",
+      "title": "Open Mortgage - Wholesale",
+      "summary": "Open Mortgage - Wholesale introduces itself as a new lender with innovative loan products for underserved communities.",
       "impact": "medium",
-      "action_needed": "Monitor the offerings and terms of Residential Capital Partners' new platform to potentially add them as a lender source for non-QM loans.",
+      "action_needed": "Review their product offerings and consider applying for broker approval to expand your lending options.",
       "raw_snippet": "",
       "structured_data": {
-        "company_name": "Residential Capital Partners"
+        "url": "https://www.openwholesale.com/",
+        "address": "3211 Internet Blvd., Suite 300, Frisco, TX 75034",
+        "nmls_id": "222730",
+        "contact_number": "1-866-462-4891"
       }
     }
   ]

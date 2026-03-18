@@ -1,0 +1,92 @@
+{
+  "request_id": "CCC-20260318174521",
+  "submitted_at": "2026-03-18T17:45:21.699529",
+  "form_data": {
+    "loanType": "dscr",
+    "propertyType": "sfr",
+    "propertyState": "CA",
+    "purchasePrice": "$600,000",
+    "rentalIncome": "$3,800",
+    "downPayment": "20",
+    "creditScore": "below-620",
+    "fullName": "Low Credit",
+    "email": "low@test.com",
+    "phone": "(310) 555-0004"
+  },
+  "client_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.699354",
+    "decision": "NOT_QUALIFIED",
+    "decision_message": "No matching programs found for this deal profile.",
+    "confidence_pct": 0,
+    "programs_found": 0,
+    "conditional_flags": [
+      "Credit 580-619: limited programs available, higher rate expected.",
+      "DSCR below 1.0: sub-1 DSCR programs exist but rates will be higher.",
+      "DSCR loans strongly prefer LLC or Corp \u2014 entity formation recommended."
+    ],
+    "rate_range": null,
+    "close_estimate": null,
+    "next_steps": [
+      "Your current profile doesn't match available programs.",
+      "Credit improvement or deal restructuring may open options.",
+      "Call us \u2014 some scenarios have workarounds not visible in the form.",
+      "click@clickclickclose.click | We respond same day."
+    ],
+    "disclaimer": "This is not a loan approval or commitment to lend. Rate estimates reflect current market conditions. Actual terms depend on full documentation review and lender approval."
+  },
+  "admin_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.699354",
+    "decision": {
+      "decision": "NOT_QUALIFIED",
+      "decision_message": "No matching programs found for this deal profile.",
+      "confidence_pct": 0,
+      "programs_found": 0,
+      "hard_stops": [],
+      "conditional_flags": [
+        {
+          "code": "credit_580_to_619",
+          "message": "Credit 580-619: limited programs available, higher rate expected."
+        },
+        {
+          "code": "dscr_below_1",
+          "message": "DSCR below 1.0: sub-1 DSCR programs exist but rates will be higher."
+        },
+        {
+          "code": "no_entity",
+          "message": "DSCR loans strongly prefer LLC or Corp \u2014 entity formation recommended."
+        }
+      ],
+      "best_match": null,
+      "all_matches_count": 0
+    },
+    "borrower": {
+      "name": "Low Credit",
+      "email": "low@test.com",
+      "phone": "(310) 555-0004",
+      "best_time": "",
+      "referral": ""
+    },
+    "deal_summary": {
+      "type": "dscr",
+      "property_type": "sfr",
+      "state": "CA",
+      "credit_score": 600,
+      "loan_amount": 480000.0,
+      "ltv_pct": 80.0,
+      "dscr": 0.88,
+      "purchase_price": 600000.0,
+      "rental_income": 3800.0,
+      "close_timeline": "",
+      "experience": "",
+      "entity": ""
+    },
+    "lender_matches": [],
+    "action_items": [
+      "CALL: Low Credit at (310) 555-0004 (anytime)",
+      "EMAIL: low@test.com",
+      "NO AUTO-MATCH \u2014 manual review required"
+    ]
+  }
+}

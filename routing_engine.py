@@ -829,6 +829,17 @@ def process_submission(data: dict) -> dict:
     filepath.write_text(json.dumps(save_data, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"[SAVED] {filepath}")
 
+    # Create borrower data vault (smart contract)
+    try:
+        from smart_contracts import vault_from_submission
+        vault_result = vault_from_submission(data)
+        save_data["vault"] = vault_result
+        cr["vault_id"] = vault_result.get("vault_id", "")
+        cr["data_control"] = vault_result.get("control", "")
+        print(f"[VAULT] Created: {vault_result.get('vault_id', 'failed')}")
+    except Exception as e:
+        print(f"[VAULT SKIP] {e}")
+
     # Email notifications
     send_don_notification(deal, matches)
     send_borrower_confirmation(deal)

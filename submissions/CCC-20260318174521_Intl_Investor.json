@@ -1,0 +1,134 @@
+{
+  "request_id": "CCC-20260318174521",
+  "submitted_at": "2026-03-18T17:45:21.698593",
+  "form_data": {
+    "loanType": "foreign-national",
+    "propertyType": "condo",
+    "propertyState": "FL",
+    "purchasePrice": "$450,000",
+    "rentalIncome": "$3,200",
+    "downPayment": "25",
+    "creditScore": "720-739",
+    "experience": "first",
+    "entityType": "llc",
+    "closeTimeline": "45-days",
+    "fullName": "Intl Investor",
+    "email": "intl@test.com",
+    "phone": "+44 777 555 0003"
+  },
+  "client_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.698445",
+    "decision": "QUALIFIED",
+    "decision_message": "Qualified. 3 program(s) matched. Best rate: 7.25% - 8.0%.",
+    "confidence_pct": 60,
+    "programs_found": 3,
+    "conditional_flags": [],
+    "rate_range": "7.25% - 8.0%",
+    "close_estimate": "14-21 days",
+    "next_steps": [
+      "You're matched \u2014 we're preparing your program options now.",
+      "You'll hear from us within 15 minutes during business hours (M-F 8am-6pm CT).",
+      "We'll present 2-3 options with exact rates, terms, and close timelines.",
+      "No commitment. No credit pull. No BS."
+    ],
+    "disclaimer": "This is not a loan approval or commitment to lend. Rate estimates reflect current market conditions. Actual terms depend on full documentation review and lender approval."
+  },
+  "admin_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.698445",
+    "decision": {
+      "decision": "QUALIFIED",
+      "decision_message": "Qualified. 3 program(s) matched. Best rate: 7.25% - 8.0%.",
+      "confidence_pct": 60,
+      "programs_found": 3,
+      "hard_stops": [],
+      "conditional_flags": [],
+      "best_match": {
+        "rate_range": "7.25% - 8.0%",
+        "close_estimate": "14-21 days",
+        "reasons": [
+          "Handles foreign-national"
+        ]
+      },
+      "all_matches_count": 3
+    },
+    "borrower": {
+      "name": "Intl Investor",
+      "email": "intl@test.com",
+      "phone": "+44 777 555 0003",
+      "best_time": "",
+      "referral": ""
+    },
+    "deal_summary": {
+      "type": "foreign-national",
+      "property_type": "condo",
+      "state": "FL",
+      "credit_score": 730,
+      "loan_amount": 0,
+      "ltv_pct": 80,
+      "dscr": 0,
+      "purchase_price": 0,
+      "rental_income": 0,
+      "close_timeline": "45-days",
+      "experience": "first",
+      "entity": "llc"
+    },
+    "lender_matches": [
+      {
+        "rank": 1,
+        "lender_name": "Angel Oak",
+        "fit_score": 50,
+        "rate_estimate": "7.25% - 8.0%",
+        "close_estimate": "14-21 days",
+        "comp_model": "YSP",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "TBD",
+        "signup_url": "https://angeloakmortgage.com/",
+        "reasons": [
+          "Handles foreign-national"
+        ],
+        "warnings": [],
+        "notes": "Largest non-QM lender. Bank statements up to $3M. 80-85% LTV."
+      },
+      {
+        "rank": 2,
+        "lender_name": "Defy Mortgage",
+        "fit_score": 50,
+        "rate_estimate": "7.25% - 8.0%",
+        "close_estimate": "14-21 days",
+        "comp_model": "YSP",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "TBD",
+        "signup_url": "https://defymortgage.com/",
+        "reasons": [
+          "Handles foreign-national"
+        ],
+        "warnings": [],
+        "notes": "Sub-0.75 DSCR programs. P&L qualification. Most flexible non-QM."
+      },
+      {
+        "rank": 3,
+        "lender_name": "A&D Mortgage",
+        "fit_score": 50,
+        "rate_estimate": "7.25% - 8.0%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "TBD",
+        "signup_url": "https://www.admortgage.com/",
+        "reasons": [
+          "Handles foreign-national"
+        ],
+        "warnings": [],
+        "notes": "24-hour UW turnaround. First non-QM AUS. ITIN program. Up to $5M+ DSCR."
+      }
+    ],
+    "action_items": [
+      "CALL: Intl Investor at +44 777 555 0003 (anytime)",
+      "EMAIL: intl@test.com",
+      "BEST LENDER: Angel Oak \u2014 7.25% - 8.0% \u2014 comp 1-2%",
+      "SIGNUP: https://angeloakmortgage.com/"
+    ]
+  }
+}

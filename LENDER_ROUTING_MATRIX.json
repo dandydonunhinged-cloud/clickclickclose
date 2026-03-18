@@ -1530,6 +1530,24 @@
       "signup_url": "https://www.remnwholesale.com/"
     },
 
+    "roc_capital": {
+      "name": "Roc Capital",
+      "category": "residential_investor",
+      "products": ["dscr", "fix_flip", "bridge_residential", "table_fund", "white_label"],
+      "property_types": ["sfr", "2-4_unit", "condo"],
+      "min_loan": 75000,
+      "max_loan": 5000000,
+      "max_ltv": 90,
+      "min_credit": 620,
+      "states": "44_states",
+      "states_excluded": ["AK", "SD", "ND", "VT"],
+      "borrower_types": ["investor"],
+      "loan_purpose": ["purchase", "refinance", "cash_out", "bridge"],
+      "close_model": "table_fund",
+      "notes": "White-Label Table Funding / TPO. 4,000+ private lenders. NO buyback risk (Roc takes reps-and-warranties). NO warehouse line required. Loan closes in Click Click Close name. Historical: Roc 90% / partner 10% capital — 0% partner capital option available. Assigned to Roc post-close.",
+      "signup_url": "https://roccapital.com/white-label-table-funding/"
+    },
+
     "quontic_wholesale": {
       "name": "Quontic Wholesale",
       "category": "second_lien",

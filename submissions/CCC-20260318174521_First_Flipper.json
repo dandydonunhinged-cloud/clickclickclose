@@ -1,0 +1,132 @@
+{
+  "request_id": "CCC-20260318174521",
+  "submitted_at": "2026-03-18T17:45:21.697526",
+  "form_data": {
+    "loanType": "fix-flip",
+    "propertyType": "sfr",
+    "propertyState": "FL",
+    "flipPurchasePrice": "$180,000",
+    "rehabBudget": "$45,000",
+    "arv": "$310,000",
+    "creditScore": "640-659",
+    "experience": "first",
+    "entityType": "llc",
+    "closeTimeline": "asap",
+    "fullName": "First Flipper",
+    "email": "flip@test.com",
+    "phone": "(813) 555-0002"
+  },
+  "client_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.697231",
+    "decision": "CONDITIONAL",
+    "decision_message": "Conditional approval likely. 2 program(s) match. Review required.",
+    "confidence_pct": 75,
+    "programs_found": 2,
+    "conditional_flags": [
+      "First-time investors require lender review for fix-flip/construction \u2014 approval likely with documentation."
+    ],
+    "rate_range": "10.5% - 11.25%",
+    "close_estimate": "7-14 days",
+    "next_steps": [
+      "Conditional match found \u2014 a quick review will confirm.",
+      "We'll contact you within 15 minutes during business hours.",
+      "Have your most recent bank statements or rental leases ready.",
+      "No credit pull until you say go."
+    ],
+    "disclaimer": "This is not a loan approval or commitment to lend. Rate estimates reflect current market conditions. Actual terms depend on full documentation review and lender approval."
+  },
+  "admin_result": {
+    "request_id": "CCC-20260318174521",
+    "timestamp": "2026-03-18T17:45:21.697231",
+    "decision": {
+      "decision": "CONDITIONAL",
+      "decision_message": "Conditional approval likely. 2 program(s) match. Review required.",
+      "confidence_pct": 75,
+      "programs_found": 2,
+      "hard_stops": [],
+      "conditional_flags": [
+        {
+          "code": "first_time_investor",
+          "message": "First-time investors require lender review for fix-flip/construction \u2014 approval likely with documentation."
+        }
+      ],
+      "best_match": {
+        "rate_range": "10.5% - 11.25%",
+        "close_estimate": "7-14 days",
+        "reasons": [
+          "Handles fix-flip",
+          "Fast close capability",
+          "Fix-flip specialist"
+        ]
+      },
+      "all_matches_count": 2
+    },
+    "borrower": {
+      "name": "First Flipper",
+      "email": "flip@test.com",
+      "phone": "(813) 555-0002",
+      "best_time": "",
+      "referral": ""
+    },
+    "deal_summary": {
+      "type": "fix-flip",
+      "property_type": "sfr",
+      "state": "FL",
+      "credit_score": 650,
+      "loan_amount": 225000.0,
+      "ltv_pct": 72.6,
+      "dscr": 0,
+      "purchase_price": 180000.0,
+      "rental_income": 0,
+      "close_timeline": "asap",
+      "experience": "first",
+      "entity": "llc"
+    },
+    "lender_matches": [
+      {
+        "rank": 1,
+        "lender_name": "RCN Capital",
+        "fit_score": 95,
+        "rate_estimate": "10.5% - 11.25%",
+        "close_estimate": "7-14 days",
+        "comp_model": "YSP+referral+correspondent",
+        "comp_range": "1-2.5%",
+        "est_comp_dollars": "~$3,938",
+        "signup_url": "https://rcncapital.com/",
+        "reasons": [
+          "Handles fix-flip",
+          "Fast close capability",
+          "Fix-flip specialist"
+        ],
+        "warnings": [],
+        "notes": "Fastest close in non-QM. 5-day fix-flip. Correspondent program available."
+      },
+      {
+        "rank": 2,
+        "lender_name": "Easy Street Capital",
+        "fit_score": 85,
+        "rate_estimate": "10.5% - 11.25%",
+        "close_estimate": "7-14 days",
+        "comp_model": "broker",
+        "comp_range": "1-2%",
+        "est_comp_dollars": "~$3,375",
+        "signup_url": "https://www.easystreetcap.com/",
+        "reasons": [
+          "Handles fix-flip",
+          "Fast close capability",
+          "Accepts lower credit"
+        ],
+        "warnings": [],
+        "notes": "Texas-based. Investor focus. 640 minimum (lowest DSCR floor)."
+      }
+    ],
+    "action_items": [
+      "CALL: First Flipper at (813) 555-0002 (anytime)",
+      "EMAIL: flip@test.com",
+      "BEST LENDER: RCN Capital \u2014 10.5% - 11.25% \u2014 comp 1-2.5%",
+      "EST COMP: ~$3,938",
+      "SIGNUP: https://rcncapital.com/"
+    ]
+  }
+}
