@@ -1,0 +1,124 @@
+/* ============================================
+   UNIVERSAL DEAL FORM — STYLES
+   Navy #1a2332 / Gold #d4a843 / Inter
+   ============================================ */
+
+/* Hero */
+.apply-hero { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); padding: 7rem 0 3rem; position: relative; overflow: hidden; }
+.apply-hero::before { content:''; position:absolute; top:-50%; right:-20%; width:80%; height:200%; background:radial-gradient(ellipse, rgba(212,168,67,0.05) 0%, transparent 70%); pointer-events:none; }
+.apply-hero .container { position:relative; z-index:2; text-align:center; }
+.apply-hero h1 { color:var(--white); margin-bottom:0.75rem; font-weight:800; }
+.apply-hero h1 .gold { color:var(--gold); }
+.apply-hero p { color:rgba(255,255,255,0.7); font-size:1.1rem; max-width:600px; margin:0 auto; }
+
+/* Trust bar */
+.trust-bar { display:flex; justify-content:center; flex-wrap:wrap; gap:1.5rem; margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); }
+.trust-item { display:flex; align-items:center; gap:0.5rem; color:rgba(255,255,255,0.7); font-size:0.9rem; font-weight:500; }
+.trust-icon { width:32px; height:32px; background:rgba(212,168,67,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.9rem; flex-shrink:0; }
+
+/* Progress */
+.form-wrapper { background:var(--off-white); padding:3rem 0 5rem; }
+.progress-bar { display:flex; justify-content:center; gap:0; margin-bottom:2.5rem; max-width:700px; margin-left:auto; margin-right:auto; }
+.progress-step { flex:1; text-align:center; position:relative; }
+.progress-step::before { content:''; position:absolute; top:18px; left:0; right:0; height:3px; background:var(--gray-200); z-index:0; }
+.progress-step:first-child::before { left:50%; }
+.progress-step:last-child::before { right:50%; }
+.progress-num { width:36px; height:36px; border-radius:50%; background:var(--gray-200); color:var(--gray-500); display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:0.9rem; position:relative; z-index:1; transition:all 0.3s; }
+.progress-step.active .progress-num { background:var(--gold); color:var(--navy); }
+.progress-step.done .progress-num { background:var(--navy); color:var(--white); }
+.progress-step.done::before,
+.progress-step.active::before { background:var(--navy); }
+.progress-label { display:block; font-size:0.75rem; color:var(--gray-500); margin-top:6px; font-weight:500; }
+.progress-step.active .progress-label { color:var(--navy); font-weight:700; }
+
+/* Form card */
+.form-card { max-width:860px; margin:0 auto; background:var(--white); border-radius:12px; padding:2.5rem; box-shadow:var(--shadow-md); }
+.form-card h2 { color:var(--navy); margin-bottom:0.5rem; font-size:1.4rem; }
+.form-card .step-desc { color:var(--gray-500); margin-bottom:1.5rem; font-size:0.95rem; }
+
+/* Steps */
+.step { display:none; }
+.step.active { display:block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+/* Form elements */
+.fg { margin-bottom:1.25rem; }
+.fg label { display:block; font-weight:600; font-size:0.88rem; color:var(--navy); margin-bottom:0.4rem; }
+.fg .req { color:#dc2626; }
+.fc { width:100%; padding:0.7rem 0.9rem; border:1.5px solid var(--gray-200); border-radius:8px; font-size:0.95rem; font-family:inherit; transition:border-color 0.2s; background:var(--white); }
+.fc:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(212,168,67,0.15); }
+.fc.err { border-color:var(--error); }
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.row3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; }
+.hint { font-size:0.78rem; color:var(--gray-500); margin-top:0.3rem; }
+.err-msg { color:var(--error); font-size:0.78rem; margin-top:0.3rem; display:none; }
+
+/* Loan type cards */
+.type-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:1.5rem; }
+.type-card { border:2px solid var(--gray-200); border-radius:10px; padding:1.25rem 1rem; text-align:center; cursor:pointer; transition:all 0.2s; position:relative; }
+.type-card:hover { border-color:var(--gold); background:rgba(212,168,67,0.03); }
+.type-card.selected { border-color:var(--gold); background:rgba(212,168,67,0.08); }
+.type-card.selected::after { content:'✓'; position:absolute; top:8px; right:10px; color:var(--gold); font-weight:700; font-size:1.1rem; }
+.type-card .type-icon { font-size:1.8rem; margin-bottom:0.5rem; }
+.type-card .type-name { font-weight:700; font-size:0.88rem; color:var(--navy); }
+.type-card .type-sub { font-size:0.75rem; color:var(--gray-500); margin-top:0.25rem; }
+.type-card input { display:none; }
+
+/* Radio/checkbox options */
+.opt-group { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.opt { border:1.5px solid var(--gray-200); border-radius:8px; padding:0.6rem 1.1rem; cursor:pointer; transition:all 0.2s; font-size:0.9rem; font-weight:500; }
+.opt:hover { border-color:var(--gold); }
+.opt.selected { border-color:var(--gold); background:rgba(212,168,67,0.08); color:var(--navy); }
+.opt input { display:none; }
+
+/* DSCR calculator inline */
+.dscr-calc { background:var(--navy); color:var(--white); border-radius:10px; padding:1.25rem 1.5rem; margin:1.5rem 0; display:none; }
+.dscr-calc.show { display:block; }
+.dscr-calc .dscr-label { font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:0.25rem; }
+.dscr-val { font-size:2rem; font-weight:800; color:var(--gold); }
+.dscr-val.good { color:#22c55e; }
+.dscr-val.ok { color:var(--gold); }
+.dscr-val.low { color:#ef4444; }
+.dscr-verdict { font-size:0.85rem; color:rgba(255,255,255,0.7); margin-top:0.25rem; }
+
+/* Conditional sections */
+.cond { display:none; }
+.cond.show { display:block; }
+
+/* Nav buttons */
+.form-nav { display:flex; justify-content:space-between; margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--gray-200); }
+.btn-back { background:transparent; border:1.5px solid var(--gray-200); color:var(--navy); padding:0.7rem 1.5rem; border-radius:8px; font-weight:600; font-size:0.9rem; cursor:pointer; transition:all 0.2s; }
+.btn-back:hover { border-color:var(--navy); background:var(--gray-100); }
+.btn-next { background:var(--gold); color:var(--navy); border:none; padding:0.7rem 2rem; border-radius:8px; font-weight:700; font-size:0.95rem; cursor:pointer; transition:all 0.2s; }
+.btn-next:hover { background:var(--gold-light); }
+.btn-next:disabled { opacity:0.5; cursor:not-allowed; }
+.btn-submit { background:var(--navy); color:var(--white); border:none; padding:0.9rem 2.5rem; border-radius:8px; font-weight:700; font-size:1rem; cursor:pointer; transition:all 0.2s; }
+.btn-submit:hover { background:var(--navy-light); }
+.btn-submit:disabled { opacity:0.5; cursor:not-allowed; }
+
+/* Success */
+@keyframes checkPop { 0%{transform:scale(0);opacity:0} 50%{transform:scale(1.2)} 100%{transform:scale(1);opacity:1} }
+.success { text-align:center; padding:3rem 1rem; }
+.success-icon { width:80px; height:80px; background:var(--success); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2.5rem; color:var(--white); margin:0 auto 1.5rem; animation:checkPop 0.5s ease forwards; }
+.success h2 { color:var(--navy); margin-bottom:0.5rem; }
+.success p { color:var(--gray-500); max-width:500px; margin:0 auto 1.5rem; }
+.report-box { background:var(--off-white); border-radius:12px; padding:2rem; max-width:700px; margin:0 auto 2rem; text-align:left; white-space:pre-wrap; font-size:0.95rem; line-height:1.7; color:var(--gray-700); }
+
+/* Disclaimer */
+.disclaimer { max-width:860px; margin:2rem auto 0; padding:1.25rem 1.5rem; background:var(--white); border:1px solid var(--gray-200); border-radius:12px; font-size:0.82rem; color:var(--gray-500); line-height:1.7; text-align:center; }
+.disclaimer strong { color:var(--navy); }
+
+/* Responsive */
+@media (max-width:768px) {
+  .apply-hero { padding:6rem 0 2rem; }
+  .form-card { padding:1.5rem; }
+  .row2, .row3 { grid-template-columns:1fr; }
+  .type-grid { grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); }
+  .progress-label { font-size:0.65rem; }
+  .trust-bar { gap:1rem; }
+  .trust-item { font-size:0.8rem; }
+}
+@media (max-width:480px) {
+  .trust-bar { flex-direction:column; align-items:center; }
+  .type-grid { grid-template-columns:1fr 1fr; }
+}
