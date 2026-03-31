@@ -1,0 +1,242 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-03-31",
+  "lenders": [
+    {
+      "id": "kiavi",
+      "name": "Kiavi",
+      "website": "kiavi.com",
+      "channel": "Direct lender with broker partnerships",
+      "states": "49 states + DC",
+      "products": [
+        {"name": "Fix-and-Flip Purchase + Rehab", "type": "bridge", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit", "condo", "PUD", "manufactured"]},
+        {"name": "Fix-and-Flip Refinance", "type": "bridge", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit", "condo", "PUD", "manufactured"]},
+        {"name": "Bridge Loan", "type": "bridge", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit", "condo", "PUD", "manufactured"]},
+        {"name": "New Construction", "type": "construction", "term": "Varies", "property": ["SFR", "2-4 unit"]},
+        {"name": "DSCR Rental Purchase (30-yr Fixed)", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "2-4 unit", "condo", "PUD"]},
+        {"name": "DSCR Rental Purchase (5/6 ARM)", "type": "dscr", "term": "5/6 ARM", "property": ["SFR", "2-4 unit", "condo", "PUD"]},
+        {"name": "DSCR Rental Refinance", "type": "dscr", "term": "30-yr fixed or ARM", "property": ["SFR", "2-4 unit", "condo", "PUD"]},
+        {"name": "DSCR Rental Cash-Out Refinance", "type": "dscr", "term": "30-yr fixed or ARM", "property": ["SFR", "2-4 unit", "condo", "PUD"]}
+      ]
+    },
+    {
+      "id": "lendingone",
+      "name": "LendingOne",
+      "website": "lendingone.com",
+      "channel": "TPO Broker Program + Referral Partner",
+      "states": "46 states",
+      "products": [
+        {"name": "Fix-and-Flip (Cosmetic Rehab)", "type": "bridge", "term": "12 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Fix-and-Flip (Heavy Rehab)", "type": "bridge", "term": "12 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Fix-to-Rent (BRRRR)", "type": "bridge-to-perm", "term": "12 mo bridge to DSCR", "property": ["SFR", "2-4 unit"]},
+        {"name": "New Construction", "type": "construction", "term": "Varies", "property": ["SFR", "2-4 unit"]},
+        {"name": "Build-to-Rent (BTR)", "type": "construction-to-perm", "term": "Varies", "property": ["SFR", "2-4 unit"]},
+        {"name": "DSCR Rental Purchase", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR Rental Refinance", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR Rental Cash-Out Refinance", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR Short-Term Rental (Airbnb/VRBO)", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "SFR Portfolio Loan", "type": "portfolio", "term": "30-yr", "property": ["Multiple SFR"]},
+        {"name": "Investor Line of Credit", "type": "loc", "term": "12 mo revolving", "property": ["SFR", "2-4 unit"]}
+      ]
+    },
+    {
+      "id": "lima-one",
+      "name": "Lima One Capital",
+      "website": "limaone.com",
+      "channel": "Retail Broker Program",
+      "states": "46 states",
+      "products": [
+        {"name": "FixNFlip", "type": "bridge", "term": "13 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "New Construction (Ground-Up)", "type": "construction", "term": "Varies", "property": ["SFR", "infill", "spec", "model homes"]},
+        {"name": "Bridge Loan", "type": "bridge", "term": "Varies", "property": ["SFR", "2-4 unit", "multifamily"]},
+        {"name": "Rental Single Asset Purchase", "type": "dscr", "term": "30-yr", "property": ["SFR", "1-4 unit"]},
+        {"name": "Rental Single Asset Refinance", "type": "dscr", "term": "30-yr", "property": ["SFR", "1-4 unit"]},
+        {"name": "Rental Single Asset Cash-Out", "type": "dscr", "term": "30-yr", "property": ["SFR", "1-4 unit"]},
+        {"name": "Rental Portfolio Loan", "type": "portfolio", "term": "30-yr", "property": ["Multiple SFR"]},
+        {"name": "Multifamily Stabilized", "type": "multifamily", "term": "Varies", "property": ["5+ unit apartments"]},
+        {"name": "Investor Line of Credit", "type": "loc", "term": "Renews every 6 mo", "property": ["SFR", "2-4 unit", "construction"]}
+      ]
+    },
+    {
+      "id": "rcn-capital",
+      "name": "RCN Capital",
+      "website": "rcncapital.com",
+      "channel": "Wholesale + Correspondent + Broker Referral",
+      "states": "45 states",
+      "products": [
+        {"name": "Fix-and-Flip (ARV Program)", "type": "bridge", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Bridge Acquisition (As-Is)", "type": "bridge", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Ground-Up Construction (1-4 Unit)", "type": "construction", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Ground-Up Construction (5+ Unit)", "type": "construction", "term": "12-18 mo", "property": ["5-9 unit multifamily"]},
+        {"name": "Multifamily Bridge (5-9 Unit)", "type": "bridge", "term": "12-24 mo", "property": ["5-9 unit apartments"]},
+        {"name": "Multifamily/Mixed-Use Bridge", "type": "bridge", "term": "12-24 mo", "property": ["Mixed-use"]},
+        {"name": "DSCR Rental Purchase", "type": "dscr", "term": "30-yr fixed, hybrid ARMs", "property": ["SFR", "1-4 unit", "condo", "townhome"]},
+        {"name": "DSCR Rental Rate/Term Refinance", "type": "dscr", "term": "30-yr fixed, hybrid ARMs", "property": ["SFR", "1-4 unit", "condo", "townhome"]},
+        {"name": "DSCR Rental Cash-Out Refinance", "type": "dscr", "term": "30-yr fixed, hybrid ARMs", "property": ["SFR", "1-4 unit", "condo", "townhome"]},
+        {"name": "Rental Portfolio Loan", "type": "portfolio", "term": "30-yr", "property": ["Multiple properties"]},
+        {"name": "Structured Finance ($2.5M-$75M+)", "type": "portfolio", "term": "Custom", "property": ["Multi-property portfolios"]}
+      ]
+    },
+    {
+      "id": "angel-oak",
+      "name": "Angel Oak Mortgage Solutions",
+      "website": "angeloakms.com",
+      "channel": "Wholesale",
+      "states": "47 states",
+      "products": [
+        {"name": "Investor Cash Flow (DSCR) Purchase", "type": "dscr", "term": "Up to 40-yr fixed, I/O", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Investor Cash Flow (DSCR) Rate/Term Refi", "type": "dscr", "term": "Up to 40-yr fixed, I/O", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Investor Cash Flow (DSCR) Cash-Out Refi", "type": "dscr", "term": "Up to 40-yr fixed, I/O", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Investor Cash Flow (DSCR) Delayed Financing", "type": "dscr", "term": "Up to 40-yr fixed, I/O", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Investor Cash Flow — STR", "type": "dscr", "term": "Up to 40-yr fixed", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Investor Cash Flow — No DSCR", "type": "dscr", "term": "Up to 40-yr fixed", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Bank Statement (Personal)", "type": "bank-statement", "term": "30-yr fixed/ARM", "property": ["Owner-occ", "investment"]},
+        {"name": "Bank Statement (Business)", "type": "bank-statement", "term": "30-yr fixed/ARM", "property": ["Owner-occ", "investment"]},
+        {"name": "Bank Statement HELOC", "type": "heloc", "term": "Revolving", "property": ["Owner-occ"]},
+        {"name": "Closed-End Second Loan", "type": "equity", "term": "Fixed", "property": ["Owner-occ"]},
+        {"name": "Asset Qualifier", "type": "asset-depletion", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Portfolio Select (Full Doc Non-QM)", "type": "non-qm", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Platinum Jumbo", "type": "jumbo", "term": "30-yr fixed/ARM", "property": ["Owner-occ"]},
+        {"name": "Foreign National Investor", "type": "foreign-national", "term": "Varies", "property": ["Investment"]},
+        {"name": "Rate Buydown (2-1 Buydown)", "type": "buydown", "term": "30-yr", "property": ["Various"]}
+      ]
+    },
+    {
+      "id": "griffin",
+      "name": "Griffin Funding",
+      "website": "griffinfunding.com",
+      "channel": "Direct lender / broker partnerships",
+      "states": "All 50 states + DC",
+      "products": [
+        {"name": "DSCR Purchase (30-yr Fixed)", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Purchase (40-yr Fixed)", "type": "dscr", "term": "40-yr fixed", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Purchase (15-yr Fixed)", "type": "dscr", "term": "15-yr fixed", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Purchase (5/1 ARM)", "type": "dscr", "term": "5/1 ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Purchase (7/1 ARM)", "type": "dscr", "term": "7/1 ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Purchase (10/1 ARM)", "type": "dscr", "term": "10/1 ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR 6-Month SOFR ARM", "type": "dscr", "term": "6-mo SOFR adj", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR 1-Year SOFR ARM", "type": "dscr", "term": "1-yr SOFR adj", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR Interest-Only", "type": "dscr", "term": "30/40-yr w/ I/O", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Cash-Out Refinance", "type": "dscr", "term": "30/40-yr fixed or ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Rate/Term Refinance", "type": "dscr", "term": "30/40-yr fixed or ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Home Equity Loan", "type": "equity", "term": "Fixed", "property": ["Investment"]},
+        {"name": "Bank Statement Loan", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "VA Loan", "type": "government", "term": "30-yr", "property": ["Owner-occ"]}
+      ]
+    },
+    {
+      "id": "new-silver",
+      "name": "New Silver",
+      "website": "newsilver.com",
+      "channel": "Partner Program (white label) + direct",
+      "states": "43 states",
+      "products": [
+        {"name": "Fix & Flip Purchase + Rehab", "type": "bridge", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Fix & Flip Refinance + Rehab", "type": "bridge", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "DSCR Rental Purchase", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-8 unit", "STR"]},
+        {"name": "DSCR Rental Refinance", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-8 unit"]},
+        {"name": "DSCR Rental Cash-Out", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-8 unit"]},
+        {"name": "Ground-Up Construction", "type": "construction", "term": "Up to 18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Small Balance Commercial", "type": "commercial", "term": "Varies", "property": ["Commercial"]}
+      ]
+    },
+    {
+      "id": "ad-mortgage",
+      "name": "A&D Mortgage",
+      "website": "admortgage.com",
+      "channel": "Wholesale (TPO) — Top 5",
+      "states": "Nationwide",
+      "products": [
+        {"name": "DSCR Purchase", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Refinance", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "DSCR Cash-Out", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit", "condo"]},
+        {"name": "Bank Statement (Personal)", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Bank Statement (Business)", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "ITIN Loan", "type": "itin", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Asset Depletion", "type": "asset-depletion", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Full Doc Non-QM", "type": "non-qm", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Jumbo Non-QM", "type": "jumbo", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "FHA", "type": "government", "term": "30-yr", "property": ["Owner-occ"]},
+        {"name": "Conventional", "type": "agency", "term": "15/30-yr", "property": ["Owner-occ", "investment"]}
+      ]
+    },
+    {
+      "id": "easy-street",
+      "name": "Easy Street Capital",
+      "website": "easystreetcap.com",
+      "channel": "Direct lender / broker partnerships",
+      "states": "Nationwide",
+      "products": [
+        {"name": "EasyFix — Light Rehab", "type": "bridge", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "EasyFix — Heavy Rehab", "type": "bridge", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "EasyFix — New Construction", "type": "construction", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "EasyRent — DSCR Purchase (LTR)", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit"]},
+        {"name": "EasyRent — DSCR Purchase (MTR)", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit"]},
+        {"name": "EasyRent — DSCR Purchase (STR/Airbnb)", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit"]},
+        {"name": "EasyRent — DSCR Rate/Term Refinance", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit"]},
+        {"name": "EasyRent — DSCR Cash-Out Refinance", "type": "dscr", "term": "30-yr fixed", "property": ["SFR", "1-4 unit"]},
+        {"name": "EasyRent — DSCR Interest-Only", "type": "dscr", "term": "30-yr w/ 10-yr I/O", "property": ["SFR", "1-4 unit"]},
+        {"name": "Blanket Portfolio Loan", "type": "portfolio", "term": "30-yr", "property": ["Multiple SFR"]}
+      ]
+    },
+    {
+      "id": "uwm",
+      "name": "UWM (United Wholesale Mortgage)",
+      "website": "uwm.com",
+      "channel": "Wholesale (largest in US)",
+      "states": "Nationwide",
+      "products": [
+        {"name": "Conventional Purchase/Refi", "type": "agency", "term": "15/30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "FHA", "type": "government", "term": "30-yr", "property": ["Owner-occ"]},
+        {"name": "VA", "type": "government", "term": "30-yr", "property": ["Owner-occ"]},
+        {"name": "USDA", "type": "government", "term": "30-yr", "property": ["Owner-occ rural"]},
+        {"name": "Jumbo", "type": "jumbo", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Investor Flex DSCR", "type": "dscr", "term": "Varies", "property": ["Investment 1-4 unit"]},
+        {"name": "HELOC", "type": "heloc", "term": "Revolving", "property": ["Owner-occ"]},
+        {"name": "Non-QM Bank Statement", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]}
+      ]
+    },
+    {
+      "id": "loanstream",
+      "name": "LoanStream Wholesale",
+      "website": "loanstreamwholesale.com",
+      "channel": "Wholesale (TPO) — #1 Non-QM Scotsman Guide 2025",
+      "states": "Nationwide",
+      "products": [
+        {"name": "Non-QM DSCR Investor (Purchase)", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["Investment 1-4 unit", "non-warrantable condo"]},
+        {"name": "Non-QM DSCR Investor (Rate/Term Refi)", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["Investment 1-4 unit"]},
+        {"name": "Non-QM DSCR Investor (Cash-Out)", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["Investment 1-4 unit"]},
+        {"name": "Non-QM Bank Statement", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Non-QM Asset Utilization", "type": "asset-depletion", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Non-QM Full Doc", "type": "non-qm", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Conventional", "type": "agency", "term": "15/30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "FHA", "type": "government", "term": "30-yr", "property": ["Owner-occ"]},
+        {"name": "VA", "type": "government", "term": "30-yr", "property": ["Owner-occ"]},
+        {"name": "USDA", "type": "government", "term": "30-yr", "property": ["Owner-occ rural"]},
+        {"name": "JumboONE", "type": "jumbo", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "HELOC", "type": "heloc", "term": "Revolving", "property": ["Owner-occ"]}
+      ]
+    },
+    {
+      "id": "american-heritage",
+      "name": "American Heritage Lending",
+      "website": "ahlendtpo.com",
+      "channel": "TPO",
+      "states": "Nationwide",
+      "products": [
+        {"name": "DSCR Purchase", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "DSCR Refinance/Cash-Out", "type": "dscr", "term": "30-yr fixed/ARM", "property": ["SFR", "1-4 unit"]},
+        {"name": "Bank Statement (Personal)", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Bank Statement (Business)", "type": "bank-statement", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "1099 Income", "type": "non-qm", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Asset Qualifier", "type": "asset-depletion", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Full Doc Non-QM", "type": "non-qm", "term": "30-yr", "property": ["Owner-occ", "investment"]},
+        {"name": "Foreign National Investor", "type": "foreign-national", "term": "Varies", "property": ["Investment"]},
+        {"name": "Bridge/Cross-Collateral Loan", "type": "bridge", "term": "Varies", "property": ["Investment"]},
+        {"name": "Fix-and-Flip", "type": "bridge", "term": "12-18 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Ground-Up Construction", "type": "construction", "term": "12-24 mo", "property": ["SFR", "2-4 unit"]},
+        {"name": "Small Multifamily", "type": "multifamily", "term": "Varies", "property": ["5+ unit"]}
+      ]
+    }
+  ]
+}
